@@ -11,6 +11,7 @@ export default defineConfig({
         faqs: resolve(__dirname, 'pages/faqs/index.html'),
         contact: resolve(__dirname, 'pages/contact/index.html'),
         blog: resolve(__dirname, 'blogs/journal/index.html'),
+        waitlist: resolve(__dirname, 'pages/waitlist/index.html'),
       },
     },
   },
