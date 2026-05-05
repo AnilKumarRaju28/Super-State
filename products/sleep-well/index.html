@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Well | SuperState</title>
+  <meta name="description" content="Science-Backed Dark Chocolate Ritual. Relax. Sleep deeper. Wake up sharp." />
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    /* Product Page Specific Styles */
+    .breadcrumb {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 2rem;
+      font-family: var(--font-mono);
+    }
+
+    .breadcrumb a {
+      color: var(--text-primary);
+      text-decoration: underline;
+    }
+
+    .product-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .main-image {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background-color: var(--accent-brand);
+      border-radius: var(--border-radius);
+      position: relative;
+    }
+
+    .thumbnail-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .thumbnail {
+      aspect-ratio: 1/1;
+      background-color: var(--accent-brand);
+      border-radius: var(--border-radius);
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    .thumbnail.active {
+      opacity: 1;
+      border: 2px solid var(--accent-secondary);
+    }
+
+    .product-info {
+      padding-left: 0;
+    }
+
+    @media (min-width: 768px) {
+      .product-info {
+        padding-left: 3rem;
+      }
+    }
+
+    .price-block {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background-color: rgba(200, 169, 126, 0.1);
+      border-radius: var(--border-radius);
+    }
+
+    .purchase-options {
+      margin: 2rem 0;
+    }
+
+    .option-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+
+    .tabs-nav {
+      display: flex;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .tab-btn {
+      padding: 1rem 2rem;
+      background: none;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      color: #666;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab-btn.active {
+      color: var(--text-primary);
+      border-bottom-color: var(--accent-brand);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fade-in 0.3s ease;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      text-align: left;
+    }
+
+    .comparison-table th {
+      font-family: var(--font-heading);
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="brand">SuperState</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/our-story/">Our Story</a></li>
+        <li><a href="/blogs/journal/">Journal</a></li>
+        <li><a href="/pages/faqs/">FAQs</a></li>
+        <li><a href="/pages/contact/">Contact</a></li>
+      </ul>
+      <a href="#waitlist" class="btn btn-primary nav-cta">Join Waitlist</a>
+      <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- 7.1 ABOVE THE FOLD -->
+  <section class="bg-primary pt-8">
+    <div class="container grid-12">
+      <div class="product-gallery" style="grid-column: span 12;">
+        <div class="main-image">
+          <div style="position: absolute; bottom: 20px; left: 20px; display: flex; gap: 0.5rem;">
+            <span class="badge" style="background: white;">FSSAI Certified</span>
+            <span class="badge" style="background: white;">Vegan</span>
+          </div>
+        </div>
+        <div class="thumbnail-strip">
+          <div class="thumbnail active"></div>
+          <div class="thumbnail"></div>
+          <div class="thumbnail"></div>
+          <div class="thumbnail"></div>
+        </div>
+      </div>
+
+      <style>
+        @media(min-width: 768px) {
+          .product-gallery {
+            grid-column: span 6;
+          }
+
+          .product-info {
+            grid-column: span 6;
+          }
+        }
+      </style>
+
+      <div class="product-info" style="grid-column: span 12;">
+        <div class="breadcrumb"><a href="/">Home</a> > <a href="#">Products</a> > Sleep Well</div>
+
+        <h1 style="margin-bottom: 0.5rem;">Sleep Well</h1>
+        <p
+          style="font-family: var(--font-heading); font-size: 24px; color: var(--accent-secondary); font-style: italic; margin-bottom: 1rem;">
+          Science-Backed Dark Chocolate Ritual</p>
+        <div
+          style="font-family: var(--font-mono); font-size: 13px; color: var(--accent-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">
+          Relax. Sleep deeper. Wake up sharp.</div>
+
+        <div style="color: var(--accent-secondary); margin-bottom: 2rem;">★★★★★ <span
+            style="color: var(--text-primary); font-size: 14px; margin-left: 0.5rem;">Early member reviews</span></div>
+
+        <div class="price-block">
+          <div style="font-size: 24px; font-weight: 700; margin-bottom: 0.5rem;">₹1,800 / month</div>
+          <div style="font-size: 14px; color: #666;">= ₹60 per sachet · 30 sachets per pack</div>
+          <div style="font-size: 13px; color: var(--accent-brand); font-weight: 500; margin-top: 0.5rem;">* Sample pack
+            available</div>
+        </div>
+
+        <div class="purchase-options">
+          <label class="option-row">
+            <input type="radio" name="purchase_type" value="onetime">
+            <span>One-time purchase</span>
+          </label>
+          <label class="option-row" style="font-weight: 500;">
+            <input type="radio" name="purchase_type" value="subscribe" checked>
+            <span>Subscribe & save (best value)</span>
+          </label>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <label style="display: block; font-size: 14px; margin-bottom: 0.5rem;">Quantity</label>
+          <select
+            style="padding: 0.8rem; border: 1px solid var(--border-color); border-radius: var(--border-radius); font-family: var(--font-body); outline: none; background: white;">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+
+        <a href="#waitlist" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Join Waitlist — Get Early
+          Access</a>
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <a href="https://wa.me/919567309388"
+            style="font-size: 14px; text-decoration: underline; color: var(--text-primary);">I have a question</a>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+          <span class="badge">FSSAI</span>
+          <span class="badge">Vegan</span>
+          <span class="badge">No Preservatives</span>
+        </div>
+
+        <div
+          style="font-size: 13px; color: #666; background: white; padding: 1rem; border-radius: var(--border-radius);">
+          Free shipping across India. Delivered in 5–6 days.<br>
+          COD available. 10-day no-questions-asked returns.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7.2 PRODUCT DETAILS TABS -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="desc">Description</button>
+        <button class="tab-btn" data-tab="ingr">Ingredients</button>
+        <button class="tab-btn" data-tab="use">How to Use</button>
+        <button class="tab-btn" data-tab="rev">Reviews</button>
+      </div>
+
+      <div class="tab-content active" id="tab-desc">
+        <div class="grid-12">
+          <div style="grid-column: span 12;">
+            <h3 style="margin-bottom: 2rem;">Who this is for (and not for)</h3>
+          </div>
+          <style>
+            @media(min-width: 768px) {
+              .half-col {
+                grid-column: span 6;
+              }
+            }
+          </style>
+          <div class="half-col" style="grid-column: span 12; margin-bottom: 2rem;">
+            <h4 style="color: var(--success); margin-bottom: 1rem;">✓ Who this is for</h4>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 0.5rem;">Struggles to switch off their brain at night</li>
+              <li style="margin-bottom: 0.5rem;">Wakes up tired or foggy despite sleeping</li>
+              <li style="margin-bottom: 0.5rem;">Wants an easy, no-nonsense way to support recovery</li>
+              <li style="margin-bottom: 0.5rem;">Finds modern health advice too confusing</li>
+              <li style="margin-bottom: 0.5rem;">Wants better sleep, less stress, more daily energy</li>
+            </ul>
+          </div>
+          <div class="half-col" style="grid-column: span 12; margin-bottom: 2rem;">
+            <h4 style="color: #D9534F; margin-bottom: 1rem;">✗ Who this is NOT for</h4>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 0.5rem;">Looking for a magic pill or instant miracle</li>
+              <li style="margin-bottom: 0.5rem;">Wants the cheapest option (we use quality ingredients)</li>
+              <li style="margin-bottom: 0.5rem;">Needs a medical fix for clinical sleep disorders</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 style="margin: 3rem 0 2rem;">Key Benefits</h3>
+        <div class="grid-12">
+          <div style="grid-column: span 12; margin-bottom: 1rem;" class="half-col">
+            <h4 style="color: var(--accent-brand);">Deep Restorative Sleep</h4>
+            <p>Quiets a racing mind, helps you fall asleep faster, wake up genuinely refreshed.</p>
+          </div>
+          <div style="grid-column: span 12; margin-bottom: 1rem;" class="half-col">
+            <h4 style="color: var(--accent-brand);">Calm Focus & Energy</h4>
+            <p>Supports mental clarity and physical recovery for better daily performance.</p>
+          </div>
+          <div style="grid-column: span 12; margin-bottom: 1rem;" class="half-col">
+            <h4 style="color: var(--accent-brand);">Reduced Evening Stress</h4>
+            <p>Supports metabolic balance to help reduce late-night stress and cravings.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-ingr">
+        <h3 style="margin-bottom: 0.5rem;">Every ingredient. Every dose. Explained.</h3>
+        <p style="margin-bottom: 2rem; max-width: 700px;">We don't hide behind proprietary blends. This is exactly what
+          is in every sachet and exactly why.</p>
+
+        <div style="overflow-x: auto;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Ingredient</th>
+                <th>Dose note</th>
+                <th>Why it's here</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 500;">Magnesium L-Threonate</td>
+                <td><span class="badge">Clinically studied</span></td>
+                <td>Crosses blood-brain barrier; supports deep sleep and daytime cognition</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 500;">Apigenin</td>
+                <td><span class="badge">Natural botanical</span></td>
+                <td>Soothing evening relaxation; helps transition nervous system to rest</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 500;">L-Theanine</td>
+                <td><span class="badge">Amino acid</span></td>
+                <td>Calms racing thoughts; reduces stress-driven mental chatter</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 500;">Magnesium Glycinate</td>
+                <td><span class="badge">Essential Mineral</span></td>
+                <td>A highly bioavailable form of magnesium that promotes full-body relaxation</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 500;">Cocoa Powder</td>
+                <td><span class="badge">Natural Base</span></td>
+                <td>Rich in antioxidants; supports mood and makes the ritual delicious</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 500;">Coconut Sugar</td>
+                <td><span class="badge">Natural Sweetener</span></td>
+                <td>Low glycemic sweetness without spiking blood sugar</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 500;">Himalayan Pink Salt</td>
+                <td><span class="badge">Trace Minerals</span></td>
+                <td>Provides essential trace minerals to support cellular hydration</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div
+          style="background-color: var(--bg-primary); padding: 2rem; border-radius: var(--border-radius); margin-top: 2rem;">
+          <h4 style="margin-bottom: 1rem; color: var(--accent-brand);">What is NOT included</h4>
+          <p style="font-family: var(--font-mono); font-size: 14px;">No preservatives · Natural sugar only · No
+            artificial flavors · No soy · No gluten · No fillers · No proprietary blends</p>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-use">
+        <h3 style="margin-bottom: 2rem;">How to maximize your ritual</h3>
+        <ul style="list-style: none; padding: 0; margin-bottom: 3rem;">
+          <li style="margin-bottom: 1rem;"><strong>When:</strong> 30–60 minutes before bedtime</li>
+          <li style="margin-bottom: 1rem;"><strong>How:</strong> Stir into warm milk (dairy, almond, oat, or soy) or
+            warm water</li>
+          <li style="margin-bottom: 1rem;"><strong>Consistency:</strong> Daily use is key — benefits build over 7–14
+            days</li>
+          <li style="margin-bottom: 1rem;"><strong>Storage:</strong> Cool, dry place away from direct sunlight</li>
+        </ul>
+
+        <div style="background-color: var(--bg-primary); padding: 2rem; border-radius: var(--border-radius);">
+          <h4 style="margin-bottom: 1rem;">What to expect</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;"><strong>Day 1–3:</strong> May notice a calmer evening, slightly easier to
+              unwind</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Day 7:</strong> Most users report falling asleep more naturally
+            </li>
+            <li style="margin-bottom: 0.5rem;"><strong>Day 14:</strong> Full benefits of Magnesium L-Threonate begin to
+              build</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Day 30:</strong> Consistent, measurable improvement in sleep
+              quality and next-day energy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-rev">
+        <div style="text-align: center; padding: 4rem 0;">
+          <h3 style="margin-bottom: 1rem;">Reviews coming soon — we're launching shortly.</h3>
+          <p style="margin-bottom: 2rem; color: #666;">Join the waitlist to be among the first to try Sleep Well and
+            share your experience.</p>
+          <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7.3 WHY THIS IS DIFFERENT -->
+  <section class="bg-primary">
+    <div class="container text-center">
+      <h2 style="margin-bottom: 3rem;">Why this is different.</h2>
+      <div style="overflow-x: auto;">
+        <table class="comparison-table"
+          style="background: white; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-soft);">
+          <thead style="background: var(--bg-dark); color: white;">
+            <tr>
+              <th style="padding: 1.5rem; text-align: left;">Feature</th>
+              <th style="padding: 1.5rem; text-align: center;">SuperState</th>
+              <th style="padding: 1.5rem; text-align: center; color: #aaa;">Typical Supplement</th>
+              <th style="padding: 1.5rem; text-align: center; color: #aaa;">Nothing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 1.5rem; font-weight: 500;">Open-Label Formula</td>
+              <td style="text-align: center; color: var(--success); font-size: 20px;">✓</td>
+              <td style="text-align: center; color: #D9534F; font-size: 20px;">✗</td>
+              <td style="text-align: center; color: #D9534F; font-size: 20px;">✗</td>
+            </tr>
+            <tr>
+              <td style="padding: 1.5rem; font-weight: 500;">Clinical Doses</td>
+              <td style="text-align: center; color: var(--success); font-size: 20px;">✓</td>
+              <td style="text-align: center; color: #D9534F; font-size: 20px;">✗</td>
+              <td style="text-align: center; color: #D9534F; font-size: 20px;">✗</td>
+            </tr>
+            <tr>
+              <td style="padding: 1.5rem; font-weight: 500;">Enjoyable Ritual</td>
+              <td style="text-align: center; color: var(--success); font-size: 20px;">✓</td>
+              <td style="text-align: center; color: #D9534F; font-size: 20px;">✗</td>
+              <td style="text-align: center; color: #D9534F; font-size: 20px;">✗</td>
+            </tr>
+            <tr>
+              <td style="padding: 1.5rem; font-weight: 500;">Zero Dependency</td>
+              <td style="text-align: center; color: var(--success); font-size: 20px;">✓</td>
+              <td style="text-align: center; color: #D9534F; font-size: 20px;">✗</td>
+              <td style="text-align: center; color: var(--success); font-size: 20px;">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product FAQ & Waitlist (Reused patterns) -->
+  <!-- ... existing global footer and waitlist... -->
+  <section id="waitlist" class="bg-accent" style="padding: 120px 0; text-align: center;">
+    <div class="container" style="max-width: 600px;">
+      <h2 style="color: var(--bg-white); margin-bottom: 1.5rem;">Be the first to sleep better.</h2>
+      <form class="waitlist-form waitlist-multi">
+        <input type="text" placeholder="Full Name" required class="form-input">
+        <input type="tel" placeholder="Mobile Number" required pattern="[0-9]{10}" maxlength="10"
+          title="Please enter exactly 10 digits" class="form-input">
+        <input type="email" placeholder="Email Address" required class="form-input">
+        <input type="text" placeholder="City / Location" required class="form-input">
+        <button type="submit" class="btn btn-secondary waitlist-btn-full">Join Waitlist</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>© 2025 SuperState | Privacy Policy | Terms | Shipping | Returns</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js" type="module"></script>
+  <script>
+    // Tab switching logic
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+
+</html>

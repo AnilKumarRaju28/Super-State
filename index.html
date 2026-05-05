@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuperState | Health, simplified.</title>
+  <meta name="description"
+    content="Science-backed daily restoration. We turn complex nutrition into a simple, dark-chocolate ritual." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Sleep Well — launching soon. Join the waitlist for early access.
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="/" class="brand">SuperState</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/our-story/">Our Story</a></li>
+        <li><a href="/blogs/journal/">Journal</a></li>
+        <li><a href="/pages/faqs/">FAQs</a></li>
+        <li><a href="/pages/contact/">Contact</a></li>
+      </ul>
+      <a href="#waitlist" class="btn btn-primary nav-cta">Join Waitlist</a>
+      <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <span class="brand">SuperState</span>
+      <button class="close-drawer" aria-label="Close Menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/pages/our-story/">Our Story</a></li>
+      <li><a href="/blogs/journal/">Journal</a></li>
+      <li><a href="/pages/faqs/">FAQs</a></li>
+      <li><a href="/pages/contact/">Contact</a></li>
+    </ul>
+    <div style="margin-top: 2rem;">
+      <a href="#waitlist" class="btn btn-primary" style="width: 100%;">Join Waitlist</a>
+    </div>
+  </div>
+
+  <!-- 6.1 HERO SECTION -->
+  <header class="hero section bg-primary fade-up" style="min-height: 90vh; padding-top: 4rem;">
+    <div class="container">
+
+      <!-- Top Row: Main Headline -->
+      <div class="hero-top"
+        style="max-width: 700px; min-height: 70vh; display: flex; flex-direction: column; justify-content: center; margin-bottom: 10rem;">
+        <span class="eyebrow">Science-backed daily restoration</span>
+        <h1 class="text-accent" style="margin-bottom: 1.5rem;">Health, simplified.</h1>
+        <p class="subheadline">
+          We make health simple in a world that makes it complicated.
+        </p>
+        <div class="cta-row" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
+          <a href="#how-it-works" class="btn btn-outline">See How It Works ↓</a>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Product Display -->
+      <div class="grid-12" style="align-items: center; padding-bottom: 6rem;">
+
+        <!-- Left Side: Image and Tags -->
+        <div class="hero-image-col fade-up">
+          <div class="img-placeholder" style="width: 100%; max-width: 400px; position: relative; aspect-ratio: 4/5;">
+            Product Image
+            <div
+              style="position: absolute; bottom: 20px; left: -20px; background: white; padding: 10px 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-soft); font-family: var(--font-mono); font-size: 14px; color: var(--text-primary);">
+              ₹60 / sachet
+            </div>
+          </div>
+          <div class="trust-strip" style="display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem;">
+            <span class="badge">✓ Open-label formula</span>
+            <span class="badge">✓ No hidden fillers</span>
+            <span class="badge">✓ FSSAI Certified</span>
+            <span class="badge">✓ Vegan</span>
+          </div>
+        </div>
+
+        <!-- Right Side: Overview Content -->
+        <div class="hero-side-content fade-up" style="margin-top: 3rem;">
+          <h3 style="margin-bottom: 1rem;">Sleep Well.</h3>
+          <p style="margin-bottom: 2rem; font-size: 18px; color: var(--text-primary);">
+            We turn complex nutrition into a simple, dark-chocolate ritual. One sachet. No gimmicks. Just the
+            science-backed essentials you need to relax, sleep deeper, and wake up sharper.
+          </p>
+          <div>
+            <a href="#waitlist" class="btn btn-secondary" style="display: inline-flex; align-items: center;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              Add to Cart
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <style>
+      .hero-image-col,
+      .hero-side-content {
+        grid-column: span 12;
+      }
+
+      @media (min-width: 768px) {
+        .hero-image-col {
+          grid-column: span 6;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hero-side-content {
+          grid-column: span 6;
+          padding-left: 2rem;
+          margin-top: 0 !important;
+        }
+      }
+    </style>
+  </header>
+
+  <!-- 6.2 MARQUEE -->
+  <div class="marquee-container"
+    style="background-color: var(--accent-brand); color: var(--accent-secondary); height: 44px; display: flex; align-items: center; overflow: hidden; white-space: nowrap; font-family: var(--font-mono); font-size: 13px;">
+    <div class="marquee-content" style="display: inline-block; animation: scroll 30s linear infinite;">
+      <!-- Repeat items to create endless scroll effect -->
+      No proprietary blends · Magnesium L-Threonate · Open label formula · FSSAI certified · Made in India · Vegan ·
+      Dark chocolate base · Zero preservatives · Science-backed ·
+      No proprietary blends · Magnesium L-Threonate · Open label formula · FSSAI certified · Made in India · Vegan ·
+      Dark chocolate base · Zero preservatives · Science-backed ·
+      No proprietary blends · Magnesium L-Threonate · Open label formula · FSSAI certified · Made in India · Vegan ·
+      Dark chocolate base · Zero preservatives · Science-backed ·
+    </div>
+  </div>
+
+  <!-- 6.3 PROBLEM SECTION -->
+  <section class="problem-section bg-white fade-up">
+    <div class="container">
+      <div class="grid-12">
+        <div class="problem-header" style="grid-column: span 12; margin-bottom: 3rem;">
+          <h2 style="max-width: 600px;">The truth about your sleep routine.</h2>
+          <p class="subheadline" style="max-width: 600px;">The health industry profits from confusion. We're stripping
+            away the noise to show you what actually works.</p>
+        </div>
+        <style>
+          @media(min-width: 768px) {
+            .problem-header {
+              grid-column: span 4;
+            }
+
+            .problem-cards {
+              grid-column: span 8;
+            }
+          }
+
+          .problem-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          @media(min-width: 768px) {
+            .problem-cards {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+        </style>
+        <div class="problem-cards" style="grid-column: span 12;">
+          <div class="card">
+            <svg class="icon-placeholder" viewBox="0 0 24 24">
+              <circle cx="8" cy="12" r="5" />
+              <circle cx="16" cy="12" r="5" />
+            </svg>
+            <h3>Over-complicated stacks</h3>
+            <p>Too many pills, powders, and miracle stacks that add more stress than they solve.</p>
+          </div>
+          <div class="card">
+            <svg class="icon-placeholder" viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              <polygon points="12 7 13.5 10.5 17 11 14.5 13.5 15 17 12 15.5 9 17 9.5 13.5 7 11 10.5 10.5 12 7" />
+            </svg>
+            <h3>Marketing fluff, zero proof</h3>
+            <p>Celebrity-endorsed products built on buzzwords, not data. You deserve better than that.</p>
+          </div>
+          <div class="card">
+            <svg class="icon-placeholder" viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="12" cy="16" r="1" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            </svg>
+            <h3>Hidden proprietary blends</h3>
+            <p>Dosages buried in blends, fillers you can't pronounce, and no way to verify what you're actually taking.
+            </p>
+          </div>
+        </div>
+        <div style="grid-column: span 12; margin-top: 3rem; text-align: center;">
+          <p style="font-style: italic; color: var(--accent-brand); font-weight: 500;">"We built SuperState to fix all
+            three."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6.4 DIFFERENTIATORS SECTION -->
+  <section class="diff-section bg-primary fade-up">
+    <div class="container text-center">
+      <span class="eyebrow">Our approach</span>
+      <h2 style="margin-bottom: 4rem;">Why this is different.</h2>
+      <style>
+        .diff-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          text-align: left;
+        }
+
+        @media(min-width: 768px) {
+          .diff-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        .number-bg {
+          font-family: var(--font-heading);
+          font-size: 80px;
+          color: var(--accent-secondary);
+          opacity: 0.3;
+          line-height: 1;
+          margin-bottom: 1rem;
+        }
+      </style>
+      <div class="diff-grid">
+        <div class="card" style="background-color: transparent; box-shadow: none; padding: 0;">
+          <div class="number-bg">01</div>
+          <h3>Open-Label Science</h3>
+          <p>No 'proprietary blends.' No hidden dosages. We list exactly what is in your product, at what dose, and
+            exactly why it's there.</p>
+        </div>
+        <div class="card" style="background-color: transparent; box-shadow: none; padding: 0;">
+          <div class="number-bg">02</div>
+          <h3>The Ritual Factor</h3>
+          <p>We turned complex supplement science into a delicious dark chocolate experience you'll actually look
+            forward to every night.</p>
+        </div>
+        <div class="card" style="background-color: transparent; box-shadow: none; padding: 0;">
+          <div class="number-bg">03</div>
+          <h3>Sleep-to-Performance</h3>
+          <p>We don't just sedate you. We help you relax, recover, and wake up sharper — supporting your daily mental
+            and metabolic goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6.5 INGREDIENT PROOF SECTION -->
+  <section class="ingredients-section bg-dark fade-up">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <span class="eyebrow" style="color: var(--accent-secondary);">What's inside</span>
+        <h2 style="color: var(--bg-white);">The science, stripped bare.</h2>
+        <p class="subheadline" style="color: #A09E9B; margin: 0 auto;">Every ingredient has a reason. Every dose has
+          evidence. Nothing is here for the label.</p>
+      </div>
+
+      <style>
+        .carousel-wrapper {
+          position: relative;
+          width: 100%;
+          display: flex;
+          align-items: center;
+        }
+
+        .ing-grid {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          gap: 2rem;
+          padding-bottom: 1rem;
+          width: 100%;
+          scrollbar-width: none;
+        }
+
+        .ing-grid::-webkit-scrollbar {
+          display: none;
+        }
+
+        .ing-card {
+          flex: 0 0 100%;
+          scroll-snap-align: start;
+          background-color: var(--bg-darker);
+          border-radius: var(--border-radius);
+          padding: 2.5rem;
+        }
+
+        @media(min-width: 768px) {
+          .ing-card {
+            flex: 0 0 calc(33.333% - 1.33rem);
+          }
+        }
+
+        .carousel-btn {
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(8px);
+          color: var(--bg-white);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          z-index: 10;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .carousel-btn svg {
+          width: 16px;
+          height: 16px;
+          stroke: white;
+          stroke-width: 2.5;
+          fill: none;
+        }
+
+        .carousel-btn:hover {
+          background: rgba(255, 255, 255, 0.3);
+          border-color: rgba(255, 255, 255, 0.4);
+          transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn.left {
+          left: -20px;
+        }
+
+        .carousel-btn.right {
+          right: -20px;
+        }
+
+        @media (max-width: 1024px) {
+          .carousel-btn.left {
+            left: 5px;
+          }
+
+          .carousel-btn.right {
+            right: 5px;
+          }
+        }
+
+        .ing-badge {
+          font-family: var(--font-mono);
+          color: var(--accent-secondary);
+          font-size: 12px;
+          margin-bottom: 1rem;
+          display: block;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+
+        .ing-role {
+          font-size: 14px;
+          font-weight: 500;
+          color: #A09E9B;
+          margin-bottom: 1.5rem;
+        }
+
+        .myth-strip {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          margin-top: 4rem;
+          padding: 2rem;
+          background-color: rgba(255, 255, 255, 0.05);
+          border-radius: var(--border-radius);
+        }
+
+        @media(min-width: 768px) {
+          .myth-strip {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+      </style>
+
+      <div class="carousel-wrapper">
+        <button class="carousel-btn left" id="ing-prev" aria-label="Previous">
+          <svg viewBox="0 0 24 24">
+            <path d="M15 18l-6-6 6-6"></path>
+          </svg>
+        </button>
+        <div class="ing-grid" id="ing-grid">
+          <div class="ing-card">
+            <span class="ing-badge">Clinically studied dose</span>
+            <h3 style="color: var(--bg-white);">Magnesium L-Threonate</h3>
+            <div class="ing-role">Deep Sleep & Brain Health</div>
+            <p style="color: #D1D0CE;">Unlike common magnesium, this specific form crosses the blood-brain barrier to
+              support deep rest and daytime cognitive function.</p>
+          </div>
+          <div class="ing-card">
+            <span class="ing-badge">Natural botanical</span>
+            <h3 style="color: var(--bg-white);">Apigenin</h3>
+            <div class="ing-role">Evening Relaxation</div>
+            <p style="color: #D1D0CE;">A naturally occurring compound that helps calm the nervous system for an easier,
+              gentler transition into sleep.</p>
+          </div>
+          <div class="ing-card">
+            <span class="ing-badge">Amino acid</span>
+            <h3 style="color: var(--bg-white);">L-Theanine</h3>
+            <div class="ing-role">Mental Clarity</div>
+            <p style="color: #D1D0CE;">Effectively quiets racing thoughts and stress-related mental chatter — without
+              causing next-day drowsiness.</p>
+          </div>
+          <div class="ing-card">
+            <span class="ing-badge">Bioavailable mineral</span>
+            <h3 style="color: var(--bg-white);">Magnesium Bisglycinate</h3>
+            <div class="ing-role">Muscle Recovery & Physical Calm</div>
+            <p style="color: #D1D0CE;">Focused on relaxing your physical body and supporting deep muscle recovery while
+              you sleep.</p>
+          </div>
+          <div class="ing-card">
+            <span class="ing-badge">Functional base</span>
+            <h3 style="color: var(--bg-white);">Raw Cacao</h3>
+            <div class="ing-role">The Ritual Base & Flavonoids</div>
+            <p style="color: #D1D0CE;">Rich in polyphenols and nature's mood enhancers. We use raw, unrefined cacao to
+              create a comforting bedtime ritual.</p>
+          </div>
+          <!-- Card 6 -->
+          <div class="ing-card">
+            <span class="ing-badge">Natural sweetener</span>
+            <h3 style="color: var(--bg-white);">Coconut Sugar</h3>
+            <div class="ing-role">Low GI Sweetener</div>
+            <p style="color: #D1D0CE;">Just enough to balance the bitterness of raw cacao without the blood sugar spikes
+              of refined sugar.</p>
+          </div>
+          <!-- Card 7 -->
+          <div class="ing-card">
+            <span class="ing-badge">Trace minerals</span>
+            <h3 style="color: var(--bg-white);">Pink Himalayan Salt</h3>
+            <div class="ing-role">Electrolyte Balance</div>
+            <p style="color: #D1D0CE;">Trace minerals that support cellular hydration and help you wake up feeling
+              refreshed, not dehydrated.</p>
+          </div>
+        </div>
+        <button class="carousel-btn right" id="ing-next" aria-label="Next">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 18l6-6-6-6"></path>
+          </svg>
+        </button>
+      </div>
+
+
+      <div class="myth-strip">
+        <div>
+          <span class="badge"
+            style="background-color: rgba(255, 99, 71, 0.2); color: #FFB3A7; margin-bottom: 1rem;">MYTH</span>
+          <p style="color: var(--bg-white); font-size: 18px;">"This is a sedative that will knock you out."</p>
+        </div>
+        <div>
+          <span class="badge"
+            style="background-color: rgba(74, 124, 89, 0.2); color: #A8D5B5; margin-bottom: 1rem;">REALITY</span>
+          <p style="color: var(--bg-white); font-size: 18px;">"This is not a sedative. It supports your body's own
+            natural relaxation processes so you can wind down and wake up naturally."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6.6 PRODUCT SHOWCASE SECTION -->
+  <section class="product-showcase bg-primary fade-up">
+    <div class="container grid-12" style="align-items: center;">
+      <style>
+        .showcase-img {
+          grid-column: span 12;
+          order: 2;
+        }
+
+        .showcase-content {
+          grid-column: span 12;
+          order: 1;
+        }
+
+        @media(min-width: 768px) {
+          .showcase-img {
+            grid-column: span 6;
+            order: 1;
+            display: flex;
+            justify-content: center;
+          }
+
+          .showcase-content {
+            grid-column: span 6;
+            order: 2;
+            padding-left: 2rem;
+          }
+        }
+
+        .detail-list {
+          list-style: none;
+          margin: 2rem 0;
+          font-size: 15px;
+        }
+
+        .detail-list li {
+          margin-bottom: 0.8rem;
+          display: flex;
+          gap: 0.8rem;
+        }
+      </style>
+
+      <div class="showcase-img">
+        <div class="img-placeholder" style="width: 100%; max-width: 400px; aspect-ratio: 3/4;">Product Image</div>
+      </div>
+
+      <div class="showcase-content">
+        <span class="eyebrow">Introducing</span>
+        <h2 style="margin-bottom: 0.5rem; color: var(--accent-brand);">Sleep Well.</h2>
+        <p
+          style="font-family: var(--font-heading); font-size: 24px; color: var(--accent-secondary); font-style: italic; margin-bottom: 2rem;">
+          Science-Backed Dark Chocolate Ritual</p>
+
+        <p style="font-size: 18px; margin-bottom: 2rem;">
+          One sachet. No gimmicks. Just the science-backed essentials you need to relax, sleep deeper, and wake up
+          sharper — in a dark chocolate base you'll actually look forward to every night.
+        </p>
+
+        <ul class="detail-list">
+          <li><span>🌙</span> Take 30–60 minutes before bedtime</li>
+          <li><span>🍫</span> Mix in warm milk, oat milk, or water</li>
+          <li><span>📦</span> 30 sachets per pack — one month supply</li>
+          <li><span>₹</span> ₹60 per sachet | ₹1,800 per month</li>
+          <li><span>🔄</span> Monthly subscription available</li>
+        </ul>
+
+        <div style="margin-bottom: 2rem; color: var(--accent-secondary);">
+          ★★★★★ <span style="color: var(--text-primary); font-size: 14px; margin-left: 0.5rem;">"Early access members
+            love it"</span>
+        </div>
+
+        <a href="#waitlist" class="btn btn-primary" style="width: 100%; max-width: 300px;">Join the Waitlist</a>
+        <p style="font-size: 12px; color: #666; margin-top: 0.5rem;">Free to join. No payment required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6.7 FOUNDER SECTION -->
+  <section class="founder-section bg-white fade-up">
+    <div class="container grid-12" style="align-items: center;">
+      <style>
+        .founder-img {
+          grid-column: span 12;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 2rem;
+        }
+
+        .founder-text {
+          grid-column: span 12;
+        }
+
+        @media(min-width: 768px) {
+          .founder-img {
+            grid-column: span 5;
+            margin-bottom: 0;
+          }
+
+          .founder-text {
+            grid-column: span 7;
+            padding-left: 3rem;
+          }
+        }
+      </style>
+      <div class="founder-img">
+        <div class="avatar-placeholder" style="max-width: 300px;">G</div>
+      </div>
+      <div class="founder-text">
+        <span class="eyebrow">Why we started</span>
+        <h2 style="margin-bottom: 2rem; max-width: 500px;">Built by someone who got tired of the noise.</h2>
+        <div style="font-size: 18px; display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+          <p>"I grew tired of an industry that profits from confusion — selling overpriced supplements with hidden
+            fillers and vague promises. Every product I researched had more fluff than facts."</p>
+          <p>"I built SuperState to do the opposite. Prioritise clean, data-backed science and radical transparency — so
+            you can stop guessing and start actually feeling better."</p>
+          <p>"To make health simple again."</p>
+        </div>
+        <p style="font-family: var(--font-heading); font-size: 20px; font-weight: 600; margin-bottom: 2rem;">— Georgy,
+          Founder, SuperState</p>
+        <a href="/pages/our-story/"
+          style="color: var(--accent-secondary); text-decoration: underline; font-weight: 500;">Read the full mission
+          →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6.8 HOW IT WORKS SECTION -->
+  <section id="how-it-works" class="bg-primary fade-up">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 4rem;">
+        <span class="eyebrow">Your nightly ritual</span>
+        <h2>Three steps. One habit.</h2>
+      </div>
+
+      <style>
+        .timeline {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          position: relative;
+        }
+
+        @media(min-width: 768px) {
+          .timeline {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+          }
+
+          .timeline::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 50px;
+            right: 50px;
+            height: 1px;
+            background-color: var(--border-color);
+            z-index: 1;
+          }
+        }
+
+        .timeline-step {
+          position: relative;
+          z-index: 2;
+          text-align: center;
+        }
+
+        .timeline-icon {
+          width: 48px;
+          height: 48px;
+          background-color: var(--bg-white);
+          border: 1px solid var(--border-color);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1.5rem;
+          font-size: 20px;
+        }
+      </style>
+
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="timeline-icon">🌙</div>
+          <h3 style="font-size: 20px;">30 mins before bed</h3>
+          <p style="font-size: 15px;">Tear open one sachet. Pour into your favorite warm milk or water.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-icon">☕</div>
+          <h3 style="font-size: 20px;">Stir and sip</h3>
+          <p style="font-size: 15px;">The dark chocolate base makes it a ritual you'll actually look forward to — not
+            another chore.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-icon">💤</div>
+          <h3 style="font-size: 20px;">Wind down naturally</h3>
+          <p style="font-size: 15px;">The ingredients get to work, calming your nervous system and preparing your body
+            for deep, restorative sleep.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-icon">🌅</div>
+          <h3 style="font-size: 20px;">Wake up sharp</h3>
+          <p style="font-size: 15px;">Not groggy. Not foggy. Just genuinely rested and ready to perform.</p>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 4rem;">
+        <p style="font-style: italic; font-size: 15px; color: #666;">Best results after 7–14 days of daily use. No
+          dependency. No sedation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6.9 FAQ PREVIEW -->
+  <section class="bg-white fade-up">
+    <div class="container text-center" style="max-width: 800px;">
+      <span class="eyebrow">Honest answers</span>
+      <h2 style="margin-bottom: 3rem;">Common questions.</h2>
+
+      <style>
+        .faq-item {
+          border-bottom: 1px solid var(--border-color);
+          text-align: left;
+        }
+
+        .faq-header {
+          padding: 1.5rem 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          font-family: var(--font-heading);
+          font-size: 22px;
+          font-weight: 600;
+        }
+
+        .faq-icon {
+          font-size: 24px;
+          transition: transform 0.3s ease;
+          color: var(--accent-secondary);
+        }
+
+        .faq-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+
+        .faq-inner {
+          padding-bottom: 1.5rem;
+          color: #555;
+        }
+
+        .faq-item.active .faq-icon {
+          transform: rotate(45deg);
+        }
+      </style>
+
+      <div class="faq-item">
+        <div class="faq-header">
+          Is this a sedative? <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-content">
+          <div class="faq-inner">
+            No. Sleep Well is not a medication or sedative. It uses science-backed ingredients to support your body's
+            natural relaxation and recovery processes — so you wind down and wake up naturally, without dependency.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          Why a dark chocolate base? <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-content">
+          <div class="faq-inner">
+            Because health should be a ritual you look forward to. Cacao provides a natural, enjoyable base that
+            supports ingredient absorption while making your nightly routine feel like a treat rather than a chore.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          How long until I see results? <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-content">
+          <div class="faq-inner">
+            Some people notice a calmer evening from day one. For the full benefit of Magnesium L-Threonate and
+            L-Theanine, most users feel the difference within 7–14 days of consistent daily use.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <a href="/pages/faqs/" style="color: var(--accent-secondary); font-weight: 500; text-decoration: underline;">See
+          all FAQs →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6.10 WAITLIST CAPTURE -->
+  <section id="waitlist" class="bg-accent fade-up" style="padding: 120px 0; text-align: center;">
+    <div class="container" style="max-width: 600px;">
+      <span class="eyebrow" style="color: var(--accent-secondary);">Launching soon</span>
+      <h2 style="color: var(--bg-white); margin-bottom: 1.5rem;">Be the first to sleep better.</h2>
+      <p style="color: #E8E0D4; margin-bottom: 3rem; font-size: 18px;">
+        Join the waitlist for early access when we launch. </p>
+
+      <form class="waitlist-form waitlist-multi">
+        <input type="text" placeholder="Full Name" required class="form-input">
+        <input type="tel" placeholder="Mobile Number" required pattern="[0-9]{10}" maxlength="10"
+          title="Please enter a valid mobile number" class="form-input">
+        <input type="email" placeholder="Email Address" required class="form-input">
+        <input type="text" placeholder="City / Location" required class="form-input">
+        <button type="submit" class="btn btn-secondary waitlist-btn-full">Join Waitlist</button>
+      </form>
+      <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin-bottom: 2rem;">No spam. No marketing noise. Just
+        science.</p>
+
+      <div
+        style="display: flex; justify-content: center; gap: 1.5rem; color: var(--accent-secondary); font-family: var(--font-mono); font-size: 12px; flex-wrap: wrap;">
+        <span>🔒 Private</span>
+        <span>✕ No spam</span>
+        <span>★ Founding member pricing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="footer fade-up">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 style="font-family: var(--font-heading); color: var(--bg-white); font-size: 28px; margin-bottom: 0.5rem;">
+            SuperState</h3>
+          <p
+            style="color: var(--accent-secondary); font-family: var(--font-heading); font-style: italic; margin-bottom: 1.5rem;">
+            We make health simpler.</p>
+          <div style="display: flex; gap: 0.75rem;">
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.11 1 12 1 12s0 3.89.46 5.58a2.78 2.78 0 0 0 1.94 2c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.89 23 12 23 12s0-3.89-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/pages/our-story/">Our Story</a></li>
+            <li><a href="/products/sleep-well/">Product</a></li>
+            <li><a href="/pages/faqs/">FAQs</a></li>
+            <li><a href="/blogs/journal/">Blog</a></li>
+            <li><a href="/pages/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="mailto:support@superstate.in">support@superstate.in</a></li>
+            <li><a href="https://wa.me/919567309388">WhatsApp: 9567309388</a></li>
+            <li style="margin-top: 1rem; font-size: 14px; opacity: 0.7;">Mon–Sat, 9am–7pm</li>
+            <li style="font-size: 14px; opacity: 0.7;">Response within 30 mins</li>
+          </ul>
+        </div>
+        <div>
+          <h4>One honest email a week.</h4>
+          <p style="font-size: 14px; margin-bottom: 1rem; opacity: 0.8;">No fluff. Just science, sleep tips, and early
+            access.</p>
+          <form class="newsletter-form waitlist-form">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 SuperState | Privacy Policy | Terms | Shipping | Returns</div>
+        <div>FSSAI Licensed | Vegan Certified | Made in India</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/919567309388" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"
+    title="Chat with us">
+    <svg viewBox="0 0 24 24" width="35" height="35" fill="currentColor">
+      <path
+        d="M12.01 2.013c-5.512 0-9.998 4.485-9.998 9.997 0 1.761.463 3.483 1.344 5.006L2.01 22.01l5.12-1.341c1.472.809 3.125 1.236 4.88 1.236 5.51 0 9.996-4.485 9.996-9.997 0-5.512-4.486-9.995-9.996-9.995zm5.495 14.498c-.234.658-1.345 1.229-1.87 1.294-.407.051-1.042.138-3.085-.705-2.457-1.01-4.004-3.528-4.126-3.69-.122-.162-.985-1.312-.985-2.505s.62-1.782.839-2.018c.219-.236.474-.296.633-.296.158 0 .317.001.455.007.147.006.347-.057.541.411.199.482.653 1.597.712 1.714.058.118.098.254.019.412-.078.158-.118.254-.236.393-.118.138-.249.308-.356.416-.118.129-.241.272-.107.504.135.232.602 1.002 1.296 1.618.895.795 1.65 1.051 1.888 1.168.238.118.378.098.519-.065.142-.164.61-.711.772-.956.162-.244.325-.205.544-.122.219.082 1.39.654 1.628.773.238.118.397.177.455.276.059.098.059.57-.175 1.228z" />
+    </svg>
+  </a>
+
+  <!-- Waitlist Popup -->
+  <div id="waitlist-popup" class="popup-overlay">
+    <div class="popup-content">
+      <div class="popup-icon">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+      </div>
+      <h2 class="popup-title">Be the First.</h2>
+      <p class="popup-text">
+        Join the waitlist to get early access, be among the first to experience the ritual of restorative sleep.
+      </p>
+      <a href="#waitlist" id="popup-join" class="btn btn-secondary" style="width: 100%;">Join the Waitlist</a>
+      <span id="popup-close" class="popup-skip">No thanks, I'll skip for now</span>
+    </div>
+  </div>
+
+  <script src="./main.js" type="module"></script>
+</body>
+
+</html>
