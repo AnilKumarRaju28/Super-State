@@ -35,12 +35,12 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/pages/our-story/" style="color: var(--accent-secondary);">Our Story</a></li>
-        <li><a href="/blogs/journal/">Journal</a></li>
+        <li><a href="/blogs/journal/">Blogs</a></li>
         <li><a href="/pages/get-plan/">Get Your Plan</a></li>
         <li><a href="/pages/faqs/">FAQs</a></li>
         <li><a href="/pages/contact/">Contact</a></li>
       </ul>
-      <a href="/pages/waitlist/" class="btn btn-primary nav-cta">Join Waitlist</a>
+      <a href="/products/sleep-well/" class="btn btn-primary nav-cta">Buy Now</a>
       <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
     </div>
   </nav>
@@ -53,48 +53,301 @@
     </div>
   </section>
 
-  <!-- Founder Section (Moved from Home) -->
-  <section class="founder-section bg-white fade-up">
-    <div class="container grid-12" style="align-items: center;">
-      <style>
-        .founder-img {
-          grid-column: span 12;
-          display: flex;
-          justify-content: center;
-          margin-bottom: 2rem;
-        }
+  <!-- SECTION: FOUNDER MOMENT (Moved from Home) -->
+  <section class="founder-section bg-white fade-up" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="grid-12">
+        <div
+          style="grid-column: span 12; display: flex; flex-wrap: wrap; gap: 4rem; justify-content: space-between; align-items: flex-start;">
+          <div style="flex: 1; min-width: 300px;">
+            <h2 style="margin-bottom: 4rem; line-height: 1;">Why Georgy <br> <span class="text-underline"
+                style="text-decoration-color: var(--accent-brand);">started this.</span></h2>
 
-        .founder-text {
-          grid-column: span 12;
-        }
+            <div class="founder-prose" style="font-size: 24px; line-height: 1.6; max-width: 800px; font-weight: 500;">
+              <p style="margin-bottom: 2rem;">
+                I spent years looking for health solutions that actually fit into a busy life. All I found was expensive
+                confusion.
+              </p>
+              <p style="margin-bottom: 2rem;">
+                I realized that the most powerful solutions are the simplest ones. Built on real data and honest
+                ingredients.
+              </p>
+              <p style="margin-bottom: 4rem;">
+                SuperState was born from that frustration. We're here to give you one less thing to worry about.
+              </p>
+              <div class="quote"
+                style="font-size: 32px; color: var(--accent-brand); font-weight: 800; border-left: 6px solid var(--accent-brand); padding-left: 3rem; margin-bottom: 4rem; line-height: 1.2;">
+                Restore the person, <br> simplify the process.
+              </div>
+            </div>
+          </div>
 
-        @media(min-width: 768px) {
-          .founder-img {
-            grid-column: span 5;
-            margin-bottom: 0;
-          }
+          <div style="width: 180px; flex-shrink: 0; padding-top: 1rem;">
+            <!-- FOUNDER CHARACTER ANIMATION SNIPPET -->
+            <div style="position: relative; width: 180px; height: 280px; margin: 0 auto;">
+              <div class="lightbulb-emoji"
+                style="position: absolute; top: 0px; right: 15px; font-size: 32px; z-index: 10; opacity: 0; transform-origin: bottom center; animation: bulbPop 5s ease-in-out infinite;">
+                💡</div>
 
-          .founder-text {
-            grid-column: span 7;
-            padding-left: 3rem;
-          }
-        }
-      </style>
-      <div class="founder-img">
-        <div class="avatar-placeholder" style="max-width: 300px;">G</div>
-      </div>
-      <div class="founder-text">
-        <span class="eyebrow">The Origin</span>
-        <h2 style="margin-bottom: 2rem; max-width: 500px;">Built by someone who got tired of the noise.</h2>
-        <div class="quote" style="font-size: 18px; display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
-          <p>"I grew tired of an industry that profits from confusion — selling overpriced supplements with hidden
-            fillers and vague promises. Every product I researched had more fluff than facts."</p>
-          <p>"I built SuperState to do the opposite. Prioritise clean, data-backed science and radical transparency — so
-            you can stop guessing and start actually feeling better."</p>
-          <p>"To make health simple again."</p>
+              <svg viewBox="0 0 180 280" width="180" height="280" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                  @keyframes charBob {
+
+                    0%,
+                    100% {
+                      transform: translateY(0);
+                    }
+
+                    50% {
+                      transform: translateY(-4px);
+                    }
+                  }
+
+                  @keyframes armLiftAnim {
+
+                    0%,
+                    12% {
+                      transform: rotate(0deg);
+                    }
+
+                    18%,
+                    58% {
+                      transform: rotate(-52deg);
+                    }
+
+                    64%,
+                    100% {
+                      transform: rotate(0deg);
+                    }
+                  }
+
+                  @keyframes thoughtFadeAnim {
+
+                    0%,
+                    12% {
+                      opacity: 0;
+                      transform: scale(0.5);
+                    }
+
+                    18%,
+                    58% {
+                      opacity: 1;
+                      transform: scale(1);
+                    }
+
+                    62%,
+                    100% {
+                      opacity: 0;
+                      transform: scale(0.5);
+                    }
+                  }
+
+                  @keyframes bulbPop {
+
+                    0%,
+                    58% {
+                      opacity: 0;
+                      transform: scale(0.3) rotate(-20deg);
+                    }
+
+                    62% {
+                      opacity: 1;
+                      transform: scale(1.3) rotate(8deg);
+                    }
+
+                    66%,
+                    78% {
+                      opacity: 1;
+                      transform: scale(1) rotate(0deg);
+                    }
+
+                    82%,
+                    100% {
+                      opacity: 0;
+                      transform: scale(0.8) rotate(0deg);
+                    }
+                  }
+
+                  @keyframes smileGrowAnim {
+
+                    0%,
+                    58% {
+                      transform: scaleX(1);
+                    }
+
+                    62%,
+                    78% {
+                      transform: scaleX(1.2);
+                    }
+
+                    82%,
+                    100% {
+                      transform: scaleX(1);
+                    }
+                  }
+
+                  @keyframes blushFadeAnim {
+
+                    0%,
+                    58% {
+                      opacity: 0.15;
+                    }
+
+                    62%,
+                    78% {
+                      opacity: 0.35;
+                    }
+
+                    82%,
+                    100% {
+                      opacity: 0.15;
+                    }
+                  }
+
+                  @keyframes blinkAnim {
+
+                    0%,
+                    90%,
+                    94%,
+                    100% {
+                      transform: scaleY(1);
+                    }
+
+                    92% {
+                      transform: scaleY(0.08);
+                    }
+                  }
+
+                  .char-bob {
+                    animation: charBob 5s ease-in-out infinite;
+                    transform-origin: center bottom;
+                  }
+
+                  .arm-anim {
+                    animation: armLiftAnim 5s ease-in-out infinite;
+                    transform-origin: 52px 124px;
+                  }
+
+                  .thought-anim {
+                    animation: thoughtFadeAnim 5s ease-in-out infinite;
+                    transform-origin: 145px 35px;
+                  }
+
+                  .smile-anim {
+                    animation: smileGrowAnim 5s ease-in-out infinite;
+                    transform-origin: 90px 104px;
+                  }
+
+                  .blush-anim {
+                    animation: blushFadeAnim 5s ease-in-out infinite;
+                  }
+
+                  .eyes-anim {
+                    animation: blinkAnim 5s infinite;
+                    transform-origin: 90px 75px;
+                  }
+                </style>
+
+                <g class="char-bob">
+                  <!-- LEGS & SHOES -->
+                  <path d="M 60 188 L 50 260 L 75 260 L 80 188 Z" fill="#2c3e50" />
+                  <ellipse cx="62" cy="265" rx="18" ry="10" fill="#111" />
+                  <ellipse cx="50" cy="265" rx="4" ry="6" fill="#000" opacity="0.5" />
+
+                  <path d="M 120 188 L 130 260 L 105 260 L 100 188 Z" fill="#2c3e50" />
+                  <ellipse cx="118" cy="265" rx="18" ry="10" fill="#111" />
+                  <ellipse cx="130" cy="265" rx="4" ry="6" fill="#000" opacity="0.5" />
+
+                  <!-- BODY -->
+                  <path
+                    d="M 52 124 Q 42 150 42 188 Q 90 198 138 188 Q 138 150 128 124 Q 110 114 90 114 Q 70 114 52 124 Z"
+                    fill="#1D9E75" />
+
+                  <!-- RIGHT ARM (Animated) -->
+                  <g class="arm-anim">
+                    <path d="M 52 124 Q 40 160 45 195" fill="none" stroke="#126c4f" stroke-width="16"
+                      stroke-linecap="round" />
+                    <ellipse cx="45" cy="195" rx="8" ry="10" fill="#FDDBB4" />
+                    <path d="M 50 195 Q 50 205 47 200 M 45 195 Q 45 206 42 200 M 40 195 Q 40 204 38 199" fill="none"
+                      stroke="#e8b98a" stroke-width="1.5" stroke-linecap="round" />
+                  </g>
+
+                  <!-- LEFT ARM (Resting) -->
+                  <path d="M 128 124 Q 140 160 135 195" fill="none" stroke="#126c4f" stroke-width="16"
+                    stroke-linecap="round" />
+                  <ellipse cx="135" cy="195" rx="8" ry="10" fill="#FDDBB4" />
+                  <path d="M 130 195 Q 130 205 133 200 M 135 195 Q 135 206 138 200 M 140 195 Q 140 204 142 199"
+                    fill="none" stroke="#e8b98a" stroke-width="1.5" stroke-linecap="round" />
+
+                  <!-- NECK -->
+                  <rect x="82" y="106" width="16" height="18" rx="6" fill="#FDDBB4" />
+
+                  <!-- EARS -->
+                  <ellipse cx="59" cy="77" rx="7" ry="9" fill="#FDDBB4" />
+                  <ellipse cx="60" cy="77" rx="4" ry="6" fill="#e8b98a" />
+                  <ellipse cx="121" cy="77" rx="7" ry="9" fill="#FDDBB4" />
+                  <ellipse cx="120" cy="77" rx="4" ry="6" fill="#e8b98a" />
+
+                  <!-- HEAD -->
+                  <ellipse cx="90" cy="75" rx="32" ry="36" fill="#FDDBB4" />
+
+                  <!-- HAIR -->
+                  <path d="M60 62 Q64 36 90 34 Q116 36 120 62 Q110 44 90 42 Q70 44 60 62Z" fill="#1a0f00" />
+                  <path d="M60 62 Q 55 50 62 45 Z" fill="#1a0f00" />
+                  <path d="M120 62 Q 125 50 118 45 Z" fill="#1a0f00" />
+
+                  <!-- BLUSH -->
+                  <ellipse class="blush-anim" cx="72" cy="85" rx="6" ry="4" fill="#ff7b7b" />
+                  <ellipse class="blush-anim" cx="108" cy="85" rx="6" ry="4" fill="#ff7b7b" />
+
+                  <!-- EYES -->
+                  <g class="eyes-anim">
+                    <ellipse cx="75" cy="75" rx="5" ry="5" fill="#fff" />
+                    <ellipse cx="75" cy="75" rx="3.5" ry="3.5" fill="#2c1a0e" />
+                    <ellipse cx="75" cy="75" rx="2" ry="2" fill="#0a0500" />
+                    <circle cx="76.5" cy="73.5" r="1" fill="#fff" />
+
+                    <ellipse cx="105" cy="75" rx="5" ry="5" fill="#fff" />
+                    <ellipse cx="105" cy="75" rx="3.5" ry="3.5" fill="#2c1a0e" />
+                    <ellipse cx="105" cy="75" rx="2" ry="2" fill="#0a0500" />
+                    <circle cx="106.5" cy="73.5" r="1" fill="#fff" />
+                  </g>
+
+                  <!-- SPECTACLES -->
+                  <g class="spectacles" stroke="#2c3e50" stroke-width="2.5" fill="none">
+                    <rect x="65" y="65" width="20" height="18" rx="6" />
+                    <rect x="95" y="65" width="20" height="18" rx="6" />
+                    <path d="M 85 72 Q 90 70 95 72" />
+                    <path d="M 65 72 L 59 72" />
+                    <path d="M 115 72 L 121 72" />
+                  </g>
+
+                  <!-- EYEBROWS -->
+                  <path d="M 68 66 Q 75 63 82 66" fill="none" stroke="#1a0f00" stroke-width="2.5"
+                    stroke-linecap="round" />
+                  <path d="M 112 66 Q 105 63 98 66" fill="none" stroke="#1a0f00" stroke-width="2.5"
+                    stroke-linecap="round" />
+
+                  <!-- NOSE -->
+                  <ellipse cx="87" cy="90" rx="2" ry="1.5" fill="#e8b98a" opacity="0.5" />
+                  <ellipse cx="93" cy="90" rx="2" ry="1.5" fill="#e8b98a" opacity="0.5" />
+
+                  <!-- MOUTH -->
+                  <path class="smile-anim" d="M 80 100 Q 90 108 100 100" fill="none" stroke="#c0845a" stroke-width="2.5"
+                    stroke-linecap="round" />
+
+                  <!-- THOUGHT BUBBLE -->
+                  <g class="thought-anim">
+                    <circle cx="125" cy="65" r="3" fill="#fff" stroke="#ccc" stroke-width="1.2" />
+                    <circle cx="135" cy="52" r="6" fill="#fff" stroke="#ccc" stroke-width="1.2" />
+                    <ellipse cx="155" cy="30" rx="20" ry="16" fill="#fff" stroke="#ccc" stroke-width="1.2" />
+                    <text x="155" y="35" font-size="16" text-anchor="middle">🤔</text>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
         </div>
-        <p style="font-family: var(--font-heading); font-size: 20px; font-weight: 600; margin-bottom: 0;">— Georgy,
-          Founder, SuperState</p>
       </div>
     </div>
   </section>
@@ -123,9 +376,12 @@
         <h2>The Line in the Sand</h2>
       </div>
       
-      <style>@media(min-width: 768px) { .half-col { grid-column: span 6; } }</style>
+      <style>
+        .half-col { grid-column: span 12; }
+        @media(min-width: 768px) { .half-col { grid-column: span 6; } }
+      </style>
       
-      <div class="half-col fade-up" style="grid-column: span 12; background: rgba(74, 124, 89, 0.05); padding: 3rem; border-radius: var(--border-radius);">
+      <div class="half-col fade-up" style="background: rgba(74, 124, 89, 0.05); padding: 3rem; border-radius: var(--border-radius);">
         <h3 style="margin-bottom: 2rem; color: var(--success);">What we stand for</h3>
         <ul class="stand-list">
           <li><span class="stand-icon check">✓</span> Radical ingredient transparency</li>
@@ -135,7 +391,7 @@
         </ul>
       </div>
       
-      <div class="half-col fade-up" style="grid-column: span 12; background: rgba(217, 83, 79, 0.05); padding: 3rem; border-radius: var(--border-radius);">
+      <div class="half-col fade-up" style="background: rgba(217, 83, 79, 0.05); padding: 3rem; border-radius: var(--border-radius);">
         <h3 style="margin-bottom: 2rem; color: #D9534F;">What we stand against</h3>
         <ul class="stand-list">
           <li><span class="stand-icon cross">✗</span> Marketing hype and false promises</li>
@@ -204,7 +460,8 @@
             style="color: var(--accent-secondary); font-family: var(--font-heading); font-style: italic; margin-bottom: 1.5rem;">
             We make health simpler.</p>
           <div style="display: flex; gap: 0.75rem;">
-            <a href="#" class="social-icon" aria-label="Instagram">
+            <a href="https://www.instagram.com/superstate.in/" class="social-icon" aria-label="Instagram"
+              title="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -212,7 +469,8 @@
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
-            <a href="#" class="social-icon" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/super-state/" class="social-icon" aria-label="LinkedIn"
+              title="LinkedIn">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -220,7 +478,13 @@
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </a>
-            <a href="#" class="social-icon" aria-label="Substack">
+            <a href="https://x.com/_superstate_" class="social-icon" aria-label="X (Twitter)" title="X">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.486 3.24H4.298l13.311 17.407z" />
+              </svg>
+            </a>
+            <a href="https://substack.com/@georgyvarghese" class="social-icon" aria-label="Substack" title="Substack">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <rect x="3" y="4" width="18" height="2" />
                 <rect x="3" y="8" width="18" height="2" />
@@ -236,7 +500,7 @@
             <li><a href="/pages/our-story/">Our Story</a></li>
             <li><a href="/products/sleep-well/">Product</a></li>
             <li><a href="/pages/faqs/">FAQs</a></li>
-            <li><a href="/blogs/journal/">Blog</a></li>
+            <li><a href="/blogs/journal/">Blogs</a></li>
             <li><a href="/pages/waitlist/">Waitlist</a></li>
             <li><a href="/pages/contact/">Contact</a></li>
           </ul>

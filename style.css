@@ -76,28 +76,41 @@ h6 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 42px;
+  font-family: var(--font-body);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 36px;
+  font-family: var(--font-body);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
 }
 
-h3 {
-  font-size: 24px;
+.text-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-secondary);
+  text-underline-offset: 8px;
 }
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 64px;
+    font-size: 84px; 
+    line-height: 0.95;
   }
 
   h2 {
-    font-size: 48px;
+    font-size: 64px; 
+    line-height: 1;
   }
 
   h3 {
-    font-size: 32px;
+    font-size: 36px;
+    font-weight: 800;
   }
 }
 
@@ -196,11 +209,13 @@ section {
 }
 
 .subheadline {
-  font-family: var(--font-body);
+  font-family: var(--font-mono); /* Mono-spaced subtext like Whole Truth */
   font-weight: 500;
-  font-size: 18px;
-  max-width: 520px;
+  font-size: 16px;
+  max-width: 400px;
   margin-bottom: 2rem;
+  line-height: 1.4;
+  opacity: 0.8;
 }
 
 .quote, .pull-quote {
@@ -273,12 +288,15 @@ section {
 
 .btn-outline {
   background-color: transparent;
-  border: 1px solid var(--text-primary);
-  color: var(--text-primary);
+  border: 2px solid var(--accent-brand);
+  color: var(--accent-brand);
+  border-radius: 40px; /* More rounded like Whole Truth buttons */
+  padding: 1rem 2.5rem;
+  font-weight: 600;
 }
 
 .btn-outline:hover {
-  background-color: var(--text-primary);
+  background-color: var(--accent-brand);
   color: var(--bg-white);
 }
 
@@ -774,4 +792,111 @@ section {
 .social-icon svg {
   width: 18px;
   height: 18px;
+}
+
+/* Manifesto Styles */
+.manifesto-hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.problem-manifesto h3 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: var(--accent-brand);
+}
+
+.beliefs-manifesto {
+  padding: 10rem 0;
+}
+
+.belief-card {
+  transition: var(--transition);
+}
+
+
+.founder-prose p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: #444;
+}
+
+.founder-prose .quote {
+  border-left: 3px solid var(--accent-brand);
+  padding-left: 2rem;
+  margin: 3rem 0;
+  font-style: normal;
+}
+
+.stand-against .against-list p span {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.product-teaser {
+  border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .beliefs-manifesto {
+    padding: 6rem 0;
+  }
+  
+  .belief-card {
+    padding-left: 1.5rem;
+  }
+  
+  .founder-prose .quote {
+    font-size: 20px;
+    padding-left: 1.5rem;
+  }
+}
+
+/* Truth Rows Layout */
+.truth-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.truth-row-left {
+  display: flex;
+  align-items: center;
+  color: var(--text-primary);
+}
+
+.truth-row-right {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: #5CB85C; /* muted green */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: right;
+}
+
+.closing-truth {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  .truth-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+  
+  .truth-row-right {
+    text-align: left;
+    padding-left: 2.5rem; /* align with text, bypassing the X icon */
+  }
 }

@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="../../style.css" />
   <link rel="icon" type="image/png" href="/logo.png" />
   <style>
-    .waitlist-hero { text-align: center; padding: 10rem 0 5rem; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; }
-    .form-container { max-width: 450px; margin: 0 auto; background: var(--bg-white); padding: 3rem; border-radius: var(--border-radius); box-shadow: var(--shadow-soft); transform: translateY(20px); opacity: 0; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    html, body { height: 100%; overflow: hidden; }
+    .waitlist-hero { text-align: center; padding: 0; height: calc(100vh - 80px); display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .form-container { max-width: 450px; width: 100%; background: var(--bg-white); padding: 3rem; border-radius: var(--border-radius); box-shadow: var(--shadow-soft); transform: translateY(20px); opacity: 0; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
     .form-container.visible { transform: translateY(0); opacity: 1; }
     
     .waitlist-form { display: flex; flex-direction: column; gap: 1.5rem; }
@@ -19,6 +20,9 @@
     
     .success-message { display: none; text-align: center; padding: 4rem 0; animation: fadeIn 0.8s ease forwards; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    
+    /* Hide footer on this page for a clean landing experience */
+    .footer { display: none; }
   </style>
 </head>
 
@@ -33,7 +37,7 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/pages/our-story/">Our Story</a></li>
-        <li><a href="/blogs/journal/">Journal</a></li>
+        <li><a href="/blogs/journal/">Blogs</a></li>
         <li><a href="/pages/get-plan/">Get Your Plan</a></li>
         <li><a href="/pages/faqs/">FAQs</a></li>
         <li><a href="/pages/contact/">Contact</a></li>
@@ -57,7 +61,7 @@
           <form class="waitlist-form" id="waitlist-page-form">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email Address" required>
-            <input type="tel" placeholder="Phone Number (Optional)">
+            <input type="tel" placeholder="Phone Number" required>
             <button type="submit" class="btn btn-primary" style="padding: 1.2rem;">Join the Waitlist</button>
           </form>
           <p style="font-size: 13px; color: #666; margin-top: 1.5rem;">
@@ -87,7 +91,8 @@
             style="color: var(--accent-secondary); font-family: var(--font-heading); font-style: italic; margin-bottom: 1.5rem;">
             We make health simpler.</p>
           <div style="display: flex; gap: 0.75rem;">
-            <a href="#" class="social-icon" aria-label="Instagram">
+            <a href="https://www.instagram.com/superstate.in/" class="social-icon" aria-label="Instagram"
+              title="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -95,7 +100,8 @@
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
-            <a href="#" class="social-icon" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/super-state/" class="social-icon" aria-label="LinkedIn"
+              title="LinkedIn">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -103,7 +109,13 @@
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </a>
-            <a href="#" class="social-icon" aria-label="Substack">
+            <a href="https://x.com/_superstate_" class="social-icon" aria-label="X (Twitter)" title="X">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.486 3.24H4.298l13.311 17.407z" />
+              </svg>
+            </a>
+            <a href="https://substack.com/@georgyvarghese" class="social-icon" aria-label="Substack" title="Substack">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <rect x="3" y="4" width="18" height="2" />
                 <rect x="3" y="8" width="18" height="2" />
@@ -119,7 +131,7 @@
             <li><a href="/pages/our-story/">Our Story</a></li>
             <li><a href="/products/sleep-well/">Product</a></li>
             <li><a href="/pages/faqs/">FAQs</a></li>
-            <li><a href="/blogs/journal/">Blog</a></li>
+            <li><a href="/blogs/journal/">Blogs</a></li>
             <li><a href="/pages/waitlist/">Waitlist</a></li>
             <li><a href="/pages/contact/">Contact</a></li>
           </ul>
