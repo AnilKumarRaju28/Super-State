@@ -431,7 +431,7 @@ section {
   }
   
   .logo-img {
-    height: 140px; /* Nearly fills the 150px navbar on large monitors */
+    height: 148px; /* Slightly larger, still within 150px navbar */
   }
 }
 
@@ -441,7 +441,7 @@ section {
 }
 
 .logo-img {
-  height: 110px; /* Nearly fills the 120px navbar */
+  height: 118px; /* Slightly larger, still within 120px navbar */
   width: auto;
   mix-blend-mode: multiply;
   transition: transform 0.3s ease;
@@ -451,12 +451,12 @@ section {
 .footer .logo-img {
   mix-blend-mode: normal; 
   filter: brightness(0) invert(1) brightness(1.2); /* Makes it white/light for dark footer */
-  height: 80px; /* Increased to match navbar prominence */
+  height: 108px; /* Slightly larger in footer */
 }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 44px;
+    height: 52px;
   }
 }
 
