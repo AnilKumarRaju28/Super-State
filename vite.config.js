@@ -10,7 +10,6 @@ export default defineConfig({
         story: resolve(__dirname, 'pages/our-story/index.html'),
         faqs: resolve(__dirname, 'pages/faqs/index.html'),
         contact: resolve(__dirname, 'pages/contact/index.html'),
-        blog: resolve(__dirname, 'blogs/journal/index.html'),
         waitlist: resolve(__dirname, 'pages/waitlist/index.html'),
         getPlan: resolve(__dirname, 'pages/get-plan/index.html'),
       },
