@@ -15,6 +15,29 @@ if (mobileMenuBtn && mobileDrawer && closeDrawerBtn) {
   });
 }
 
+// Hide navbar on scroll down, show on scroll up
+const navbar = document.querySelector('.navbar');
+if (navbar) {
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          navbar.classList.add('navbar--hidden');
+        } else {
+          navbar.classList.remove('navbar--hidden');
+        }
+        lastScrollY = currentScrollY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+}
+
 // Fade-up Animation on Scroll
 const fadeUpElements = document.querySelectorAll('.fade-up');
 const observerOptions = {

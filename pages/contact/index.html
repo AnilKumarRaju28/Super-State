@@ -95,6 +95,19 @@
       resize: vertical;
       min-height: 120px;
     }
+
+    /* Make the name/email/phone grid responsive */
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-form-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -108,15 +121,34 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/pages/our-story/">Our Story</a></li>
-        <li><a href="/blogs/journal/">Blogs</a></li>
         <li><a href="/pages/get-plan/">Get Your Plan</a></li>
         <li><a href="/pages/faqs/">FAQs</a></li>
         <li><a href="/pages/contact/" style="color: var(--accent-secondary);">Contact</a></li>
       </ul>
-      <a href="/products/sleep-well/" class="btn btn-primary nav-cta">Buy Now</a>
+      <a href="/products/sleep-well/" class="btn btn-primary nav-cta">View Product</a>
       <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
     </div>
   </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <span class="brand">
+        <img src="/logo.png" alt="SuperState" class="logo-img">
+      </span>
+      <button class="close-drawer" aria-label="Close Menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/pages/our-story/">Our Story</a></li>
+      <li><a href="/pages/get-plan/">Get Your Plan</a></li>
+      <li><a href="/pages/faqs/">FAQs</a></li>
+      <li><a href="/pages/contact/">Contact</a></li>
+    </ul>
+    <div style="margin-top: 2rem;">
+      <a href="/products/sleep-well/" class="btn btn-primary" style="width: 100%;">View Product</a>
+    </div>
+  </div>
 
   <section class="contact-hero fade-up">
     <div class="container">
@@ -163,7 +195,7 @@
         <!-- Right: Contact Form -->
         <div class="contact-form-container">
           <form id="contact-form">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div class="contact-form-grid">
               <div class="form-group" style="grid-column: span 2;">
                 <label class="form-label">Name</label>
                 <input type="text" class="form-input" required placeholder="Jane Doe">
@@ -270,7 +302,6 @@
             <li><a href="/pages/our-story/">Our Story</a></li>
             <li><a href="/products/sleep-well/">Product</a></li>
             <li><a href="/pages/faqs/">FAQs</a></li>
-            <li><a href="/blogs/journal/">Blogs</a></li>
             <li><a href="/pages/waitlist/">Waitlist</a></li>
             <li><a href="/pages/contact/">Contact</a></li>
           </ul>

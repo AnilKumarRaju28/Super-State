@@ -37,7 +37,6 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/pages/our-story/">Our Story</a></li>
-        <li><a href="/blogs/journal/">Blogs</a></li>
         <li><a href="/pages/get-plan/">Get Your Plan</a></li>
         <li><a href="/pages/faqs/">FAQs</a></li>
         <li><a href="/pages/contact/">Contact</a></li>
@@ -45,6 +44,23 @@
       <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
     </div>
   </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <span class="brand">
+        <img src="/logo.png" alt="SuperState" class="logo-img">
+      </span>
+      <button class="close-drawer" aria-label="Close Menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/pages/our-story/">Our Story</a></li>
+      <li><a href="/pages/get-plan/">Get Your Plan</a></li>
+      <li><a href="/pages/faqs/">FAQs</a></li>
+      <li><a href="/pages/contact/">Contact</a></li>
+    </ul>
+  </div>
 
   <main class="bg-primary">
     <div class="container">
@@ -70,7 +86,7 @@
         </div>
 
         <div class="success-message" id="success-message">
-          <div style="font-size: 64px; margin-bottom: 2rem;">✨</div>
+          <div class="popup-icon" style="background: var(--success); color: white; margin: 0 auto 2rem;">✓</div>
           <h2>You're on the list!</h2>
           <p style="font-size: 18px; margin-bottom: 3rem; opacity: 0.8;">Check your inbox. We've sent a small welcome note with what happens next.</p>
           <a href="/" class="btn btn-outline">Back to Home</a>
@@ -131,7 +147,6 @@
             <li><a href="/pages/our-story/">Our Story</a></li>
             <li><a href="/products/sleep-well/">Product</a></li>
             <li><a href="/pages/faqs/">FAQs</a></li>
-            <li><a href="/blogs/journal/">Blogs</a></li>
             <li><a href="/pages/waitlist/">Waitlist</a></li>
             <li><a href="/pages/contact/">Contact</a></li>
           </ul>
@@ -183,6 +198,7 @@
       }, 400);
     });
   </script>
+  <script src="../../main.js" type="module"></script>
 </body>
 
 </html>

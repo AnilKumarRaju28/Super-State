@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" href="/logo.png" />
   <style>
     .faq-hero { text-align: center; padding: 6rem 0 3rem; }
+    @media (max-width: 520px) { .faq-hero { padding: 4rem 0 2rem; } }
     
     .faq-category { margin-bottom: 4rem; }
     .faq-category-title { font-family: var(--font-heading); font-size: 28px; color: var(--accent-brand); margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem; }
@@ -31,15 +32,34 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/pages/our-story/">Our Story</a></li>
-        <li><a href="/blogs/journal/">Blogs</a></li>
         <li><a href="/pages/get-plan/">Get Your Plan</a></li>
         <li><a href="/pages/faqs/" style="color: var(--accent-secondary);">FAQs</a></li>
         <li><a href="/pages/contact/">Contact</a></li>
       </ul>
-      <a href="/products/sleep-well/" class="btn btn-primary nav-cta">Buy Now</a>
+      <a href="/products/sleep-well/" class="btn btn-primary nav-cta">View Product</a>
       <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
     </div>
   </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <span class="brand">
+        <img src="/logo.png" alt="SuperState" class="logo-img">
+      </span>
+      <button class="close-drawer" aria-label="Close Menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/pages/our-story/">Our Story</a></li>
+      <li><a href="/pages/get-plan/">Get Your Plan</a></li>
+      <li><a href="/pages/faqs/">FAQs</a></li>
+      <li><a href="/pages/contact/">Contact</a></li>
+    </ul>
+    <div style="margin-top: 2rem;">
+      <a href="/products/sleep-well/" class="btn btn-primary" style="width: 100%;">View Product</a>
+    </div>
+  </div>
 
   <section class="faq-hero">
     <div class="container">
@@ -187,7 +207,6 @@
             <li><a href="/pages/our-story/">Our Story</a></li>
             <li><a href="/products/sleep-well/">Product</a></li>
             <li><a href="/pages/faqs/">FAQs</a></li>
-            <li><a href="/blogs/journal/">Blogs</a></li>
             <li><a href="/pages/waitlist/">Waitlist</a></li>
             <li><a href="/pages/contact/">Contact</a></li>
           </ul>

@@ -36,6 +36,51 @@
       position: relative;
     }
 
+    .gallery-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text-primary);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+      z-index: 5;
+    }
+
+    .gallery-nav-btn:hover {
+      background: #fff;
+      transform: translateY(-50%) scale(1.03);
+    }
+
+    .gallery-nav-btn.prev { left: 12px; }
+    .gallery-nav-btn.next { right: 12px; }
+
+    .gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding-top: 12px;
+    }
+
+    .gallery-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      border: 0;
+      background: rgba(0, 0, 0, 0.18);
+      cursor: pointer;
+    }
+
+    .gallery-dot.active {
+      background: var(--color-root-state);
+    }
+
     .thumbnail-strip {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -158,47 +203,134 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/pages/our-story/">Our Story</a></li>
-        <li><a href="/blogs/journal/">Blogs</a></li>
         <li><a href="/pages/get-plan/">Get Your Plan</a></li>
         <li><a href="/pages/faqs/">FAQs</a></li>
         <li><a href="/pages/contact/">Contact</a></li>
       </ul>
-      <a href="/products/sleep-well/" class="btn btn-primary nav-cta">Buy Now</a>
       <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
     </div>
   </nav>
 
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <span class="brand">
+        <img src="/logo.png" alt="SuperState" class="logo-img">
+      </span>
+      <button class="close-drawer" aria-label="Close Menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/pages/our-story/">Our Story</a></li>
+      <li><a href="/pages/get-plan/">Get Your Plan</a></li>
+      <li><a href="/pages/faqs/">FAQs</a></li>
+      <li><a href="/pages/contact/">Contact</a></li>
+    </ul>
+    <div style="margin-top: 2rem;">
+      <a href="/pages/waitlist/" class="btn btn-primary" style="width: 100%;">Join the Waitlist</a>
+    </div>
+  </div>
+
   <!-- 7.1 ABOVE THE FOLD -->
   <section class="bg-primary pt-8">
-    <div class="container grid-12">
-      <div class="product-gallery" style="grid-column: span 12;">
-        <div class="main-image">
+    <div class="container grid-fib">
+      <div class="product-gallery col-span-13">
+        <div class="main-image" style="background: none; height: auto; aspect-ratio: auto;">
+          <img src="/assets/sleep-well-hero.png" alt="Sleep Well Hero" id="current-image" style="width: 100%; border-radius: var(--border-radius); object-fit: cover;">
+          <button class="gallery-nav-btn prev" type="button" aria-label="Previous image" id="gallery-prev">
+            ‹
+          </button>
+          <button class="gallery-nav-btn next" type="button" aria-label="Next image" id="gallery-next">
+            ›
+          </button>
           <div style="position: absolute; bottom: 20px; left: 20px; display: flex; gap: 0.5rem;">
             <span class="badge" style="background: white;">FSSAI Certified</span>
             <span class="badge" style="background: white;">Vegan</span>
           </div>
         </div>
+        <div class="gallery-dots" id="gallery-dots" aria-label="Image navigation"></div>
         <div class="thumbnail-strip">
-          <div class="thumbnail active"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
+          <div class="thumbnail active" data-src="/assets/sleep-well-hero.png" data-alt="Sleep Well Hero">
+            <img src="/assets/sleep-well-hero.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+          </div>
+          <div class="thumbnail" data-src="/assets/sleep-well-features.png" data-alt="Sleep Well Features">
+            <img src="/assets/sleep-well-features.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+          </div>
+          <div class="thumbnail" data-src="/assets/sleep-well-shaker.png" data-alt="Sleep Well Shaker">
+            <img src="/assets/sleep-well-shaker.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+          </div>
+          <div class="thumbnail" data-src="/assets/sleep-well-mobile.png" data-alt="Sleep Well Mobile">
+            <img src="/assets/sleep-well-mobile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+          </div>
         </div>
       </div>
 
-      <style>
-        @media(min-width: 768px) {
-          .product-gallery {
-            grid-column: span 6;
+      <script>
+        (function () {
+          const mainImg = document.getElementById('current-image');
+          const thumbs = Array.from(document.querySelectorAll('.thumbnail-strip .thumbnail'));
+          const prevBtn = document.getElementById('gallery-prev');
+          const nextBtn = document.getElementById('gallery-next');
+          const dotsWrap = document.getElementById('gallery-dots');
+
+          const images = thumbs.map(t => ({
+            src: t.dataset.src,
+            alt: t.dataset.alt || 'Sleep Well'
+          }));
+
+          let idx = Math.max(0, thumbs.findIndex(t => t.classList.contains('active')));
+
+          function renderDots() {
+            dotsWrap.innerHTML = images
+              .map((_, i) => `<button class="gallery-dot ${i === idx ? 'active' : ''}" type="button" aria-label="Go to image ${i + 1}" data-idx="${i}"></button>`)
+              .join('');
           }
 
-          .product-info {
-            grid-column: span 6;
+          function setActive(nextIndex) {
+            idx = (nextIndex + images.length) % images.length;
+            const { src, alt } = images[idx];
+            mainImg.src = src;
+            mainImg.alt = alt;
+            thumbs.forEach(t => t.classList.remove('active'));
+            thumbs[idx]?.classList.add('active');
+            renderDots();
           }
-        }
-      </style>
 
-      <div class="product-info" style="grid-column: span 12;">
+          thumbs.forEach((t, i) => {
+            t.addEventListener('click', () => setActive(i));
+            t.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setActive(i);
+              }
+            });
+            t.tabIndex = 0;
+            t.setAttribute('role', 'button');
+            t.setAttribute('aria-label', `Select image ${i + 1}`);
+          });
+
+          dotsWrap.addEventListener('click', (e) => {
+            const btn = e.target.closest('.gallery-dot');
+            if (!btn) return;
+            const nextIndex = Number(btn.dataset.idx);
+            if (Number.isFinite(nextIndex)) setActive(nextIndex);
+          });
+
+          prevBtn.addEventListener('click', () => setActive(idx - 1));
+          nextBtn.addEventListener('click', () => setActive(idx + 1));
+
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') setActive(idx - 1);
+            if (e.key === 'ArrowRight') setActive(idx + 1);
+          });
+
+          // Initial paint
+          renderDots();
+          setActive(idx);
+        })();
+      </script>
+
+      <div class="product-info col-span-8">
         <div class="breadcrumb"><a href="/">Home</a> > <a href="#">Products</a> > Sleep Well</div>
 
         <h1 style="margin-bottom: 0.5rem;">Sleep Well</h1>
@@ -272,57 +404,26 @@
       </div>
 
       <div class="tab-content active" id="tab-desc">
-        <div class="grid-12">
-          <div style="grid-column: span 12;">
-            <h3 style="margin-bottom: 2rem;">Who this is for (and not for)</h3>
-          </div>
-          <style>
-            @media(min-width: 768px) {
-              .half-col {
-                grid-column: span 6;
-              }
-            }
-          </style>
-          <div class="half-col" style="margin-bottom: 2rem;">
-            <h4 style="color: var(--success); margin-bottom: 1rem;">✅ Who this is for</h4>
-            <ul style="list-style: none; padding: 0;">
-              <li style="margin-bottom: 0.5rem;">🧠 Struggles to switch off their brain at night</li>
-              <li style="margin-bottom: 0.5rem;">🥱 Wakes up tired or foggy despite sleeping</li>
-              <li style="margin-bottom: 0.5rem;">🚀 Wants an easy, no-nonsense way to support recovery</li>
-              <li style="margin-bottom: 0.5rem;">🧐 Finds modern health advice too confusing</li>
-              <li style="margin-bottom: 0.5rem;">⚡ Wants better sleep, less stress, more daily energy</li>
-            </ul>
-          </div>
-          <div class="half-col" style="margin-bottom: 2rem;">
-            <h4 style="color: #D9534F; margin-bottom: 1rem;">❌ Who this is NOT for</h4>
-            <ul style="list-style: none; padding: 0;">
-              <li style="margin-bottom: 0.5rem;">🪄 Looking for a magic pill or instant miracle</li>
-              <li style="margin-bottom: 0.5rem;">💰 Wants the cheapest option (we use quality ingredients)</li>
-              <li style="margin-bottom: 0.5rem;">🏥 Needs a medical fix for clinical sleep disorders</li>
-            </ul>
-          </div>
+        <div style="max-width: 900px;">
+          <p style="font-size: 20px; line-height: 1.7; color: #555; margin-bottom: 2.5rem;">
+            A science-backed nightly ritual designed to help you relax, sleep deeper, and wake up refreshed. Made with
+            Magnesium L-Threonate, L-Theanine, Apigenin, and Glycine in a rich dark chocolate base — no gimmicks, no
+            hidden blends, just clean ingredients that support real recovery and better next-day performance.
+          </p>
         </div>
 
         <h3 style="margin: 3rem 0 2rem;">Key Benefits</h3>
-        <div class="grid-12">
-          <div style="margin-bottom: 1rem;" class="half-col">
-            <h4 style="color: var(--accent-brand);">💤 Deep Restorative Sleep</h4>
-            <p>Quiets a racing mind, helps you fall asleep faster, wake up genuinely refreshed.</p>
-          </div>
-          <div style="margin-bottom: 1rem;" class="half-col">
-            <h4 style="color: var(--accent-brand);">🧠 Calm Focus & Energy</h4>
-            <p>Supports mental clarity and physical recovery for better daily performance.</p>
-          </div>
-          <div style="margin-bottom: 1rem;" class="half-col">
-            <h4 style="color: var(--accent-brand);">⚖️ Reduced Evening Stress</h4>
-            <p>Supports metabolic balance to help reduce late-night stress and cravings.</p>
-          </div>
+        <div style="margin-bottom: 4rem; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-soft);">
+          <img src="/assets/sleep-well-features.png" alt="Key Benefits of Sleep Well" style="width: 100%; display: block;">
         </div>
 
         <div style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border-color);">
           <div class="text-center" style="margin-bottom: 4rem;">
             <span class="eyebrow">Your nightly ritual</span>
-            <h2 style="font-size: 32px;">Three steps. One habit.</h2>
+            <h2 style="font-size: 32px; margin-bottom: 2rem;">Three steps. One habit.</h2>
+            <div style="max-width: 400px; margin: 0 auto 3rem; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-soft);">
+              <img src="/assets/sleep-well-shaker.png" alt="Sleep Well Shaker" style="width: 100%; display: block;">
+            </div>
           </div>
 
           <style>
@@ -448,10 +549,6 @@
       </div>
 
       <div class="tab-content" id="tab-ingr">
-        <h3 style="margin-bottom: 0.5rem;">Every ingredient. Every dose. Explained.</h3>
-        <p style="margin-bottom: 2rem; max-width: 700px;">We don't hide behind proprietary blends. This is exactly what
-          is in every sachet and exactly why.</p>
-
         <div style="overflow-x: auto;">
           <table class="comparison-table">
             <thead>
@@ -515,28 +612,11 @@
       </div>
 
       <div class="tab-content" id="tab-use">
-        <h3 style="margin-bottom: 2rem;">How to maximize your ritual</h3>
-        <ul style="list-style: none; padding: 0; margin-bottom: 3rem;">
-          <li style="margin-bottom: 1rem;">🕒 <strong>When:</strong> 30–60 minutes before bedtime</li>
-          <li style="margin-bottom: 1rem;">☕ <strong>How:</strong> Stir into warm milk (dairy, almond, oat, or soy) or
-            warm water</li>
-          <li style="margin-bottom: 1rem;">📅 <strong>Consistency:</strong> Daily use is key — benefits build over 7–14
-            days</li>
-          <li style="margin-bottom: 1rem;">📦 <strong>Storage:</strong> Cool, dry place away from direct sunlight</li>
-        </ul>
-
-        <div style="background-color: var(--bg-primary); padding: 2rem; border-radius: var(--border-radius);">
-          <h4 style="margin-bottom: 1rem;">📈 What to expect</h4>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 0.5rem;">✨ <strong>Day 1–3:</strong> May notice a calmer evening, slightly easier to
-              unwind</li>
-            <li style="margin-bottom: 0.5rem;">🌙 <strong>Day 7:</strong> Most users report falling asleep more naturally
-            </li>
-            <li style="margin-bottom: 0.5rem;">🧠 <strong>Day 14:</strong> Full benefits of Magnesium L-Threonate begin to
-              build</li>
-            <li style="margin-bottom: 0.5rem;">🔋 <strong>Day 30:</strong> Consistent, measurable improvement in sleep
-              quality and next-day energy</li>
-          </ul>
+        <div style="display: grid; gap: var(--space-13);">
+          <img src="/assets/sleep-well-how-to-use.png" alt="How to use Sleep Well"
+            style="width: 100%; height: auto; border-radius: var(--border-radius); box-shadow: var(--shadow-soft); background: #fff;">
+          <img src="/assets/sleep-well-what-to-expect.png" alt="What to expect timeline"
+            style="width: 100%; height: auto; border-radius: var(--border-radius); box-shadow: var(--shadow-soft); background: #fff;">
         </div>
       </div>
 
@@ -605,7 +685,14 @@
             </tr>
           </tbody>
         </table>
-      <!-- MYTH VS REALITY (Relocated) -->
+      </div>
+
+      <!-- Why it works visual banner -->
+      <div style="margin-top: 4rem; border-radius: var(--border-radius); overflow: hidden;">
+        <img src="/assets/sleep-well-why.png" alt="Why it works" style="width: 100%; display: block;">
+      </div>
+
+      <!-- Myth vs Reality -->
       <div class="myth-reality-bar" style="background: #fdfdfd; border: 1px solid #e5e5e5; padding: 3rem 4rem; border-radius: 16px; display: flex; align-items: flex-start; justify-content: space-between; gap: 4rem; margin-top: 5rem; text-align: left;">
         <div style="flex: 1;">
           <span class="badge" style="background: #FFF0F0; color: #D9534F; border: 1px solid #FFDCDC; margin-bottom: 1.5rem; font-size: 10px; padding: 0.3rem 0.8rem; font-weight: 700;">MYTH</span>
@@ -624,11 +711,11 @@
 
 
   <!-- THE SCIENCE STRIPPED BARE (New Ingredient Cards Section) -->
-  <section class="section" style="background-color: var(--bg-primary); color: var(--text-primary); padding: 8rem 0;">
+  <section class="section" style="background-color: var(--bg-primary); color: var(--text-primary); padding: 6rem 0;">
     <div class="container">
       <div class="text-center" style="margin-bottom: 5rem;">
         <span class="eyebrow" style="color: var(--color-root-state); opacity: 0.8;">WHAT'S INSIDE</span>
-        <h2 style="font-size: 64px; color: var(--text-primary); margin-bottom: 1.5rem;">The science, stripped bare.</h2>
+        <h2 style="font-size: clamp(36px, 5vw, 64px); color: var(--text-primary); margin-bottom: 1.5rem;">The science, stripped bare.</h2>
         <p style="font-size: 18px; max-width: 600px; margin: 0 auto; opacity: 0.8; color: #555;">
           Every ingredient has a reason. Every dose has evidence. <br> Nothing is here for the label.
         </p>
@@ -1002,7 +1089,6 @@
             <li><a href="/pages/our-story/">Our Story</a></li>
             <li><a href="/products/sleep-well/">Product</a></li>
             <li><a href="/pages/faqs/">FAQs</a></li>
-            <li><a href="/blogs/journal/">Blogs</a></li>
             <li><a href="/pages/waitlist/">Waitlist</a></li>
             <li><a href="/pages/contact/">Contact</a></li>
           </ul>

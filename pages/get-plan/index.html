@@ -150,14 +150,34 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/pages/our-story/">Our Story</a></li>
-        <li><a href="/blogs/journal/">Blogs</a></li>
         <li><a href="/pages/get-plan/" style="color: var(--accent-secondary);">Get Your Plan</a></li>
         <li><a href="/pages/faqs/">FAQs</a></li>
         <li><a href="/pages/contact/">Contact</a></li>
       </ul>
-      <a href="/products/sleep-well/" class="btn btn-primary nav-cta">Buy Now</a>
+      <a href="/products/sleep-well/" class="btn btn-primary nav-cta">View Product</a>
+      <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
     </div>
   </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <span class="brand">
+        <img src="/logo.png" alt="SuperState" class="logo-img">
+      </span>
+      <button class="close-drawer" aria-label="Close Menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/pages/our-story/">Our Story</a></li>
+      <li><a href="/pages/get-plan/">Get Your Plan</a></li>
+      <li><a href="/pages/faqs/">FAQs</a></li>
+      <li><a href="/pages/contact/">Contact</a></li>
+    </ul>
+    <div style="margin-top: 2rem;">
+      <a href="/products/sleep-well/" class="btn btn-primary" style="width: 100%;">View Product</a>
+    </div>
+  </div>
 
   <main class="bg-primary" style="min-height: 90vh; display: flex; align-items: center; padding: 2rem 0;">
     <div class="container">
@@ -172,22 +192,22 @@
           <div class="progress-fill" id="progress-fill" style="width: 8%;"></div>
         </div>
 
-        <form id="health-form">
+        <form id="health-form" novalidate>
           <!-- Step 1: Name -->
           <div class="step active" data-step="1">
-            <h2 class="question-title">👋 What's your name?</h2>
+            <h2 class="question-title">What’s your name?</h2>
             <input type="text" id="name" class="input-field" placeholder="Full Name" required>
           </div>
 
           <!-- Step 2: Age -->
           <div class="step" data-step="2">
-            <h2 class="question-title">🎂 How old are you?</h2>
+            <h2 class="question-title">How old are you?</h2>
             <input type="number" id="age" class="input-field" placeholder="Age" min="1" max="120" required>
           </div>
 
           <!-- Step 3: Gender -->
           <div class="step" data-step="3">
-            <h2 class="question-title">👥 What is your gender?</h2>
+            <h2 class="question-title">What is your gender?</h2>
             <div class="option-grid">
               <div class="option-card" data-value="Male">Male</div>
               <div class="option-card" data-value="Female">Female</div>
@@ -199,46 +219,46 @@
 
           <!-- Step 4: Height -->
           <div class="step" data-step="4">
-            <h2 class="question-title">📏 What's your height?</h2>
+            <h2 class="question-title">What’s your height?</h2>
             <input type="number" id="height" class="input-field" placeholder="Height in cm" required>
           </div>
 
           <!-- Step 5: Weight -->
           <div class="step" data-step="5">
-            <h2 class="question-title">⚖️ What's your weight?</h2>
+            <h2 class="question-title">What’s your weight?</h2>
             <input type="number" id="weight" class="input-field" placeholder="Weight in kg" required>
           </div>
 
           <!-- Step 6: Goal -->
           <div class="step" data-step="6">
-            <h2 class="question-title">🎯 What is your primary goal?</h2>
+            <h2 class="question-title">What is your primary goal?</h2>
             <p class="question-microcopy">This helps us tailor your plan better.</p>
             <div class="option-grid">
-              <div class="option-card" data-value="Lose weight">📉 Lose weight</div>
-              <div class="option-card" data-value="Gain weight">📈 Gain weight</div>
-              <div class="option-card" data-value="Get fitter / more active">💪 Get fitter / more active</div>
-              <div class="option-card" data-value="Improve sleep">🌙 Improve sleep</div>
-              <div class="option-card" data-value="Reduce stress">🧘 Reduce stress</div>
-              <div class="option-card" data-value="General wellness">🌱 General wellness</div>
+              <div class="option-card" data-value="Lose weight">Lose weight</div>
+              <div class="option-card" data-value="Gain weight">Gain weight</div>
+              <div class="option-card" data-value="Get fitter / more active">Get fitter / more active</div>
+              <div class="option-card" data-value="Improve sleep">Improve sleep</div>
+              <div class="option-card" data-value="Reduce stress">Reduce stress</div>
+              <div class="option-card" data-value="General wellness">General wellness</div>
             </div>
             <input type="hidden" id="goal" required>
           </div>
 
           <!-- Step 6a: Weight Target (Conditional) -->
           <div class="step conditional-weight" data-step="61">
-            <h2 class="question-title" id="weight-target-title">⚖️ How many kgs do you want to lose?</h2>
+            <h2 class="question-title" id="weight-target-title">How many kgs do you want to lose?</h2>
             <input type="number" id="weight-target-value" class="input-field" placeholder="Weight in kg">
           </div>
 
           <!-- Step 6b: Timeframe (Conditional) -->
           <div class="step conditional-weight" data-step="62">
-            <h2 class="question-title">📅 In how many weeks?</h2>
+            <h2 class="question-title">In how many weeks?</h2>
             <input type="number" id="weight-target-weeks" class="input-field" placeholder="Number of weeks">
           </div>
 
           <!-- Step 7: Conditions -->
           <div class="step" data-step="7">
-            <h2 class="question-title">🏥 Any existing health conditions?</h2>
+            <h2 class="question-title">Any existing health conditions?</h2>
             <div class="option-grid" id="conditions-grid">
               <div class="option-card multi" data-value="Diabetes">Diabetes</div>
               <div class="option-card multi" data-value="Thyroid">Thyroid</div>
@@ -251,64 +271,64 @@
 
           <!-- Step 8: Allergies -->
           <div class="step" data-step="8">
-            <h2 class="question-title">🚫 Any allergies or food restrictions?</h2>
+            <h2 class="question-title">Any allergies or food restrictions?</h2>
             <input type="text" id="allergies" class="input-field" placeholder="List any allergies (or write 'None')">
           </div>
 
           <!-- Step 9: Diet -->
           <div class="step" data-step="9">
-            <h2 class="question-title">🥗 Your diet preference</h2>
+            <h2 class="question-title">Your diet preference</h2>
             <div class="option-grid">
-              <div class="option-card" data-value="Vegetarian">🥦 Vegetarian</div>
-              <div class="option-card" data-value="Non-vegetarian">🍗 Non-vegetarian</div>
-              <div class="option-card" data-value="Vegan">🌿 Vegan</div>
-              <div class="option-card" data-value="Eggetarian">🥚 Eggetarian</div>
+              <div class="option-card" data-value="Vegetarian">Vegetarian</div>
+              <div class="option-card" data-value="Non-vegetarian">Non-vegetarian</div>
+              <div class="option-card" data-value="Vegan">Vegan</div>
+              <div class="option-card" data-value="Eggetarian">Eggetarian</div>
             </div>
             <input type="hidden" id="diet" required>
           </div>
 
           <!-- Step 10: Issues -->
           <div class="step" data-step="10">
-            <h2 class="question-title">⚡ Current health challenges?</h2>
+            <h2 class="question-title">Current health challenges?</h2>
             <div class="option-grid" id="issues-grid">
-              <div class="option-card multi" data-value="Poor sleep">😴 Poor sleep</div>
-              <div class="option-card multi" data-value="Low energy">🪫 Low energy</div>
-              <div class="option-card multi" data-value="Stress">🤯 Stress</div>
-              <div class="option-card multi" data-value="Weight gain">⚖️ Weight gain</div>
-              <div class="option-card multi" data-value="Digestion issues">🤢 Digestion issues</div>
-              <div class="option-card multi" data-value="None">✅ None</div>
+              <div class="option-card multi" data-value="Poor sleep">Poor sleep</div>
+              <div class="option-card multi" data-value="Low energy">Low energy</div>
+              <div class="option-card multi" data-value="Stress">Stress</div>
+              <div class="option-card multi" data-value="Weight gain">Weight gain</div>
+              <div class="option-card multi" data-value="Digestion issues">Digestion issues</div>
+              <div class="option-card multi" data-value="None">None</div>
             </div>
             <input type="hidden" id="issues">
           </div>
 
           <!-- Step 11: Activity -->
           <div class="step" data-step="11">
-            <h2 class="question-title">🏃 How physically active are you?</h2>
+            <h2 class="question-title">How physically active are you?</h2>
             <div class="option-grid">
-              <div class="option-card" data-value="Sedentary">🪑 Sedentary</div>
-              <div class="option-card" data-value="Light activity">🚶 Light activity</div>
-              <div class="option-card" data-value="Moderate">🏃 Moderate</div>
-              <div class="option-card" data-value="Active">🏋️ Active</div>
+              <div class="option-card" data-value="Sedentary">Sedentary</div>
+              <div class="option-card" data-value="Light activity">Light activity</div>
+              <div class="option-card" data-value="Moderate">Moderate</div>
+              <div class="option-card" data-value="Active">Active</div>
             </div>
             <input type="hidden" id="activity" required>
           </div>
 
           <!-- Step 12: Sleep -->
           <div class="step" data-step="12">
-            <h2 class="question-title">😴 Average sleep hours?</h2>
+            <h2 class="question-title">Average sleep hours?</h2>
             <div class="option-grid">
-              <div class="option-card" data-value="Less than 5">😫 Less than 5</div>
-              <div class="option-card" data-value="5–6">🥱 5–6</div>
-              <div class="option-card" data-value="6–7">😴 6–7</div>
-              <div class="option-card" data-value="7–8">✨ 7–8</div>
-              <div class="option-card" data-value="8+">👑 8+</div>
+              <div class="option-card" data-value="Less than 5">Less than 5</div>
+              <div class="option-card" data-value="5–6">5–6</div>
+              <div class="option-card" data-value="6–7">6–7</div>
+              <div class="option-card" data-value="7–8">7–8</div>
+              <div class="option-card" data-value="8+">8+</div>
             </div>
             <input type="hidden" id="sleep" required>
           </div>
 
           <!-- Final Step: Lead Capture -->
           <div class="step" data-step="13">
-            <h2 class="question-title">📩 Get your personalized plan</h2>
+            <h2 class="question-title">Get your personalized plan</h2>
             <input type="email" id="email" class="input-field" placeholder="Email ID" required>
             <input type="tel" id="phone" class="input-field" placeholder="Phone Number" required>
             <p class="question-microcopy">We’ll send your personalized plan to your email. No spam. Just clarity.</p>
@@ -316,7 +336,7 @@
 
           <div class="btn-container">
             <button type="button" id="prev-btn" class="btn btn-outline" style="display: none;">Back</button>
-            <button type="button" id="next-btn" class="btn btn-primary" style="margin-left: auto;">Continue</button>
+            <button type="submit" id="next-btn" class="btn btn-primary" style="margin-left: auto;">Continue</button>
           </div>
         </form>
 
@@ -416,7 +436,6 @@
             <li><a href="/pages/our-story/">Our Story</a></li>
             <li><a href="/products/sleep-well/">Product</a></li>
             <li><a href="/pages/faqs/">FAQs</a></li>
-            <li><a href="/blogs/journal/">Blogs</a></li>
             <li><a href="/pages/waitlist/">Waitlist</a></li>
             <li><a href="/pages/contact/">Contact</a></li>
           </ul>
@@ -445,6 +464,7 @@
     </div>
   </footer>
 
+  <script src="../../main.js" type="module"></script>
   <script>
     const form = document.getElementById('health-form');
     const nextBtn = document.getElementById('next-btn');
@@ -462,8 +482,8 @@
       card.addEventListener('click', () => {
         const isMulti = card.classList.contains('multi');
         const parent = card.parentElement;
-        const targetInputId = parent.nextElementSibling?.id || parent.nextElementSibling?.nextElementSibling?.id;
-        const targetInput = document.getElementById(targetInputId);
+        const targetInput = parent.parentElement.querySelector('input[type="hidden"]');
+        const targetInputId = targetInput?.id;
 
         if (isMulti) {
           card.classList.toggle('selected');
@@ -478,9 +498,9 @@
           if (targetInputId === 'goal') {
             const title = document.getElementById('weight-target-title');
             if (card.dataset.value === 'Lose weight') {
-              title.textContent = '⚖️ How many kgs do you want to lose?';
+              title.textContent = 'How many kgs do you want to lose?';
             } else if (card.dataset.value === 'Gain weight') {
-              title.textContent = '⚖️ How many kgs do you want to gain?';
+              title.textContent = 'How many kgs do you want to gain?';
             }
           }
 
@@ -490,7 +510,10 @@
       });
     });
 
-    nextBtn.addEventListener('click', goToNextStep);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      goToNextStep();
+    });
     prevBtn.addEventListener('click', goToPrevStep);
 
     function goToNextStep() {

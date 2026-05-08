@@ -9,9 +9,10 @@
   <link rel="icon" type="image/png" href="/logo.png" />
   <style>
     .story-hero { text-align: center; padding: 8rem 0 4rem; }
-    .pull-quote { font-family: var(--font-heading); font-size: 28px; font-style: italic; color: var(--accent-brand); max-width: 800px; margin: 0 auto 4rem; text-align: center; line-height: 1.4; }
-    @media (min-width: 768px) { .pull-quote { font-size: 36px; } }
-    .story-body { max-width: 680px; margin: 0 auto; font-size: 18px; line-height: 1.8; }
+    @media (max-width: 520px) { .story-hero { padding: 5rem 0 2.5rem; } }
+    .pull-quote { font-family: var(--font-heading); font-size: 22px; color: var(--accent-brand); max-width: 920px; margin: 0 0 3rem; text-align: left; line-height: 1.5; }
+    @media (min-width: 768px) { .pull-quote { font-size: 26px; } }
+    .story-body { max-width: 920px; margin: 0; font-size: 18px; line-height: 1.85; }
     .story-body p { margin-bottom: 2rem; }
     
     .stand-list { list-style: none; padding: 0; }
@@ -35,15 +36,34 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/pages/our-story/" style="color: var(--accent-secondary);">Our Story</a></li>
-        <li><a href="/blogs/journal/">Blogs</a></li>
         <li><a href="/pages/get-plan/">Get Your Plan</a></li>
         <li><a href="/pages/faqs/">FAQs</a></li>
         <li><a href="/pages/contact/">Contact</a></li>
       </ul>
-      <a href="/products/sleep-well/" class="btn btn-primary nav-cta">Buy Now</a>
+      <a href="/products/sleep-well/" class="btn btn-primary nav-cta">View Product</a>
       <button class="mobile-menu-btn" aria-label="Open Menu">☰</button>
     </div>
   </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <span class="brand">
+        <img src="/logo.png" alt="SuperState" class="logo-img">
+      </span>
+      <button class="close-drawer" aria-label="Close Menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/pages/our-story/">Our Story</a></li>
+      <li><a href="/pages/get-plan/">Get Your Plan</a></li>
+      <li><a href="/pages/faqs/">FAQs</a></li>
+      <li><a href="/pages/contact/">Contact</a></li>
+    </ul>
+    <div style="margin-top: 2rem;">
+      <a href="/products/sleep-well/" class="btn btn-primary" style="width: 100%;">View Product</a>
+    </div>
+  </div>
 
   <!-- Section 1: Hero -->
   <section class="story-hero bg-primary">
@@ -56,295 +76,34 @@
   <!-- SECTION: FOUNDER MOMENT (Moved from Home) -->
   <section class="founder-section bg-white fade-up" style="padding: 6rem 0;">
     <div class="container">
-      <div class="grid-12">
-        <div
-          style="grid-column: span 12; display: flex; flex-wrap: wrap; gap: 4rem; justify-content: space-between; align-items: flex-start;">
-          <div style="flex: 1; min-width: 300px;">
-            <h2 style="margin-bottom: 4rem; line-height: 1;">Why Georgy <br> <span class="text-underline"
-                style="text-decoration-color: var(--accent-brand);">started this.</span></h2>
+      <div class="grid-fib">
+        <div class="col-span-21">
+          <div class="grid-fib" style="align-items: start;">
+            <div class="col-span-13">
+              <h2 style="margin-bottom: 4rem; line-height: 1;">Why Georgy <br> <span class="text-underline"
+                  style="text-decoration-color: var(--accent-brand);">started this.</span></h2>
 
-            <div class="founder-prose" style="font-size: 24px; line-height: 1.6; max-width: 800px; font-weight: 500;">
-              <p style="margin-bottom: 2rem;">
-                I spent years looking for health solutions that actually fit into a busy life. All I found was expensive
-                confusion.
-              </p>
-              <p style="margin-bottom: 2rem;">
-                I realized that the most powerful solutions are the simplest ones. Built on real data and honest
-                ingredients.
-              </p>
-              <p style="margin-bottom: 4rem;">
-                SuperState was born from that frustration. We're here to give you one less thing to worry about.
-              </p>
-              <div class="quote"
-                style="font-size: 32px; color: var(--accent-brand); font-weight: 800; border-left: 6px solid var(--accent-brand); padding-left: 3rem; margin-bottom: 4rem; line-height: 1.2;">
-                Restore the person, <br> simplify the process.
+              <div class="founder-prose" style="font-size: 24px; line-height: 1.6; max-width: 800px; font-weight: 500;">
+                <p style="margin-bottom: 2rem;">
+                  I spent years looking for health solutions that actually fit into a busy life. All I found was expensive
+                  confusion.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                  I realized that the most powerful solutions are the simplest ones. Built on real data and honest
+                  ingredients.
+                </p>
+                <p style="margin-bottom: 4rem;">
+                  SuperState was born from that frustration. We're here to give you one less thing to worry about.
+                </p>
+                <div class="quote"
+                  style="font-size: 32px; color: var(--accent-brand); border-left: 6px solid var(--accent-brand); padding-left: 3rem; margin-bottom: 0; line-height: 1.2;">
+                  Restore the person, <br> simplify the process.
+                </div>
               </div>
             </div>
-          </div>
 
-          <div style="width: 180px; flex-shrink: 0; padding-top: 1rem;">
-            <!-- FOUNDER CHARACTER ANIMATION SNIPPET -->
-            <div style="position: relative; width: 180px; height: 280px; margin: 0 auto;">
-              <div class="lightbulb-emoji"
-                style="position: absolute; top: 0px; right: 15px; font-size: 32px; z-index: 10; opacity: 0; transform-origin: bottom center; animation: bulbPop 5s ease-in-out infinite;">
-                💡</div>
-
-              <svg viewBox="0 0 180 280" width="180" height="280" xmlns="http://www.w3.org/2000/svg">
-                <style>
-                  @keyframes charBob {
-
-                    0%,
-                    100% {
-                      transform: translateY(0);
-                    }
-
-                    50% {
-                      transform: translateY(-4px);
-                    }
-                  }
-
-                  @keyframes armLiftAnim {
-
-                    0%,
-                    12% {
-                      transform: rotate(0deg);
-                    }
-
-                    18%,
-                    58% {
-                      transform: rotate(-52deg);
-                    }
-
-                    64%,
-                    100% {
-                      transform: rotate(0deg);
-                    }
-                  }
-
-                  @keyframes thoughtFadeAnim {
-
-                    0%,
-                    12% {
-                      opacity: 0;
-                      transform: scale(0.5);
-                    }
-
-                    18%,
-                    58% {
-                      opacity: 1;
-                      transform: scale(1);
-                    }
-
-                    62%,
-                    100% {
-                      opacity: 0;
-                      transform: scale(0.5);
-                    }
-                  }
-
-                  @keyframes bulbPop {
-
-                    0%,
-                    58% {
-                      opacity: 0;
-                      transform: scale(0.3) rotate(-20deg);
-                    }
-
-                    62% {
-                      opacity: 1;
-                      transform: scale(1.3) rotate(8deg);
-                    }
-
-                    66%,
-                    78% {
-                      opacity: 1;
-                      transform: scale(1) rotate(0deg);
-                    }
-
-                    82%,
-                    100% {
-                      opacity: 0;
-                      transform: scale(0.8) rotate(0deg);
-                    }
-                  }
-
-                  @keyframes smileGrowAnim {
-
-                    0%,
-                    58% {
-                      transform: scaleX(1);
-                    }
-
-                    62%,
-                    78% {
-                      transform: scaleX(1.2);
-                    }
-
-                    82%,
-                    100% {
-                      transform: scaleX(1);
-                    }
-                  }
-
-                  @keyframes blushFadeAnim {
-
-                    0%,
-                    58% {
-                      opacity: 0.15;
-                    }
-
-                    62%,
-                    78% {
-                      opacity: 0.35;
-                    }
-
-                    82%,
-                    100% {
-                      opacity: 0.15;
-                    }
-                  }
-
-                  @keyframes blinkAnim {
-
-                    0%,
-                    90%,
-                    94%,
-                    100% {
-                      transform: scaleY(1);
-                    }
-
-                    92% {
-                      transform: scaleY(0.08);
-                    }
-                  }
-
-                  .char-bob {
-                    animation: charBob 5s ease-in-out infinite;
-                    transform-origin: center bottom;
-                  }
-
-                  .arm-anim {
-                    animation: armLiftAnim 5s ease-in-out infinite;
-                    transform-origin: 52px 124px;
-                  }
-
-                  .thought-anim {
-                    animation: thoughtFadeAnim 5s ease-in-out infinite;
-                    transform-origin: 145px 35px;
-                  }
-
-                  .smile-anim {
-                    animation: smileGrowAnim 5s ease-in-out infinite;
-                    transform-origin: 90px 104px;
-                  }
-
-                  .blush-anim {
-                    animation: blushFadeAnim 5s ease-in-out infinite;
-                  }
-
-                  .eyes-anim {
-                    animation: blinkAnim 5s infinite;
-                    transform-origin: 90px 75px;
-                  }
-                </style>
-
-                <g class="char-bob">
-                  <!-- LEGS & SHOES -->
-                  <path d="M 60 188 L 50 260 L 75 260 L 80 188 Z" fill="#2c3e50" />
-                  <ellipse cx="62" cy="265" rx="18" ry="10" fill="#111" />
-                  <ellipse cx="50" cy="265" rx="4" ry="6" fill="#000" opacity="0.5" />
-
-                  <path d="M 120 188 L 130 260 L 105 260 L 100 188 Z" fill="#2c3e50" />
-                  <ellipse cx="118" cy="265" rx="18" ry="10" fill="#111" />
-                  <ellipse cx="130" cy="265" rx="4" ry="6" fill="#000" opacity="0.5" />
-
-                  <!-- BODY -->
-                  <path
-                    d="M 52 124 Q 42 150 42 188 Q 90 198 138 188 Q 138 150 128 124 Q 110 114 90 114 Q 70 114 52 124 Z"
-                    fill="#1D9E75" />
-
-                  <!-- RIGHT ARM (Animated) -->
-                  <g class="arm-anim">
-                    <path d="M 52 124 Q 40 160 45 195" fill="none" stroke="#126c4f" stroke-width="16"
-                      stroke-linecap="round" />
-                    <ellipse cx="45" cy="195" rx="8" ry="10" fill="#FDDBB4" />
-                    <path d="M 50 195 Q 50 205 47 200 M 45 195 Q 45 206 42 200 M 40 195 Q 40 204 38 199" fill="none"
-                      stroke="#e8b98a" stroke-width="1.5" stroke-linecap="round" />
-                  </g>
-
-                  <!-- LEFT ARM (Resting) -->
-                  <path d="M 128 124 Q 140 160 135 195" fill="none" stroke="#126c4f" stroke-width="16"
-                    stroke-linecap="round" />
-                  <ellipse cx="135" cy="195" rx="8" ry="10" fill="#FDDBB4" />
-                  <path d="M 130 195 Q 130 205 133 200 M 135 195 Q 135 206 138 200 M 140 195 Q 140 204 142 199"
-                    fill="none" stroke="#e8b98a" stroke-width="1.5" stroke-linecap="round" />
-
-                  <!-- NECK -->
-                  <rect x="82" y="106" width="16" height="18" rx="6" fill="#FDDBB4" />
-
-                  <!-- EARS -->
-                  <ellipse cx="59" cy="77" rx="7" ry="9" fill="#FDDBB4" />
-                  <ellipse cx="60" cy="77" rx="4" ry="6" fill="#e8b98a" />
-                  <ellipse cx="121" cy="77" rx="7" ry="9" fill="#FDDBB4" />
-                  <ellipse cx="120" cy="77" rx="4" ry="6" fill="#e8b98a" />
-
-                  <!-- HEAD -->
-                  <ellipse cx="90" cy="75" rx="32" ry="36" fill="#FDDBB4" />
-
-                  <!-- HAIR -->
-                  <path d="M60 62 Q64 36 90 34 Q116 36 120 62 Q110 44 90 42 Q70 44 60 62Z" fill="#1a0f00" />
-                  <path d="M60 62 Q 55 50 62 45 Z" fill="#1a0f00" />
-                  <path d="M120 62 Q 125 50 118 45 Z" fill="#1a0f00" />
-
-                  <!-- BLUSH -->
-                  <ellipse class="blush-anim" cx="72" cy="85" rx="6" ry="4" fill="#ff7b7b" />
-                  <ellipse class="blush-anim" cx="108" cy="85" rx="6" ry="4" fill="#ff7b7b" />
-
-                  <!-- EYES -->
-                  <g class="eyes-anim">
-                    <ellipse cx="75" cy="75" rx="5" ry="5" fill="#fff" />
-                    <ellipse cx="75" cy="75" rx="3.5" ry="3.5" fill="#2c1a0e" />
-                    <ellipse cx="75" cy="75" rx="2" ry="2" fill="#0a0500" />
-                    <circle cx="76.5" cy="73.5" r="1" fill="#fff" />
-
-                    <ellipse cx="105" cy="75" rx="5" ry="5" fill="#fff" />
-                    <ellipse cx="105" cy="75" rx="3.5" ry="3.5" fill="#2c1a0e" />
-                    <ellipse cx="105" cy="75" rx="2" ry="2" fill="#0a0500" />
-                    <circle cx="106.5" cy="73.5" r="1" fill="#fff" />
-                  </g>
-
-                  <!-- SPECTACLES -->
-                  <g class="spectacles" stroke="#2c3e50" stroke-width="2.5" fill="none">
-                    <rect x="65" y="65" width="20" height="18" rx="6" />
-                    <rect x="95" y="65" width="20" height="18" rx="6" />
-                    <path d="M 85 72 Q 90 70 95 72" />
-                    <path d="M 65 72 L 59 72" />
-                    <path d="M 115 72 L 121 72" />
-                  </g>
-
-                  <!-- EYEBROWS -->
-                  <path d="M 68 66 Q 75 63 82 66" fill="none" stroke="#1a0f00" stroke-width="2.5"
-                    stroke-linecap="round" />
-                  <path d="M 112 66 Q 105 63 98 66" fill="none" stroke="#1a0f00" stroke-width="2.5"
-                    stroke-linecap="round" />
-
-                  <!-- NOSE -->
-                  <ellipse cx="87" cy="90" rx="2" ry="1.5" fill="#e8b98a" opacity="0.5" />
-                  <ellipse cx="93" cy="90" rx="2" ry="1.5" fill="#e8b98a" opacity="0.5" />
-
-                  <!-- MOUTH -->
-                  <path class="smile-anim" d="M 80 100 Q 90 108 100 100" fill="none" stroke="#c0845a" stroke-width="2.5"
-                    stroke-linecap="round" />
-
-                  <!-- THOUGHT BUBBLE -->
-                  <g class="thought-anim">
-                    <circle cx="125" cy="65" r="3" fill="#fff" stroke="#ccc" stroke-width="1.2" />
-                    <circle cx="135" cy="52" r="6" fill="#fff" stroke="#ccc" stroke-width="1.2" />
-                    <ellipse cx="155" cy="30" rx="20" ry="16" fill="#fff" stroke="#ccc" stroke-width="1.2" />
-                    <text x="155" y="35" font-size="16" text-anchor="middle">🤔</text>
-                  </g>
-                </g>
-              </svg>
+            <div class="col-span-8" style="display: flex; justify-content: center;">
+              <img src="/assets/georgy.jpg" alt="Georgy" style="width: 100%; max-width: 420px; border-radius: 16px; box-shadow: var(--shadow-soft); object-fit: cover;">
             </div>
           </div>
         </div>
@@ -356,13 +115,13 @@
   <section class="bg-primary pt-0" style="padding-top: 0;">
     <div class="container">
       <div class="pull-quote">
-        "The health supplement industry is built on a simple premise: confusion. Between the proprietary blends, the aggressive marketing, and the overwhelming number of products — getting healthy had become a source of stress, not a solution."
+        The health supplement industry is built on a simple premise: confusion. Between proprietary blends and aggressive marketing, getting healthy became a source of stress — not a solution.
       </div>
       
       <div class="story-body fade-up">
         <p>I grew tired of an industry that profits from confusion. Every product I researched had more fluff than facts. Dosages were hidden behind "proprietary blends." Claims were exaggerated. And everything seemed designed to sell more products, rather than actually solve the problem.</p>
         
-        <p>I realized that if something truly effective, honest, and simple was to exist, it had to be built from scratch. It meant refusing to use the cheap fillers that everyone else uses. It meant rejecting the standard industry playbook of creating confusion to drive sales.</p>
+        <p>I realized that if something truly effective and simple was to exist, it had to be built from scratch — refusing cheap fillers, and rejecting the standard playbook of confusion-driven sales.</p>
         
         <p>SuperState was born from that frustration. It is a commitment to radical transparency, science-backed formulations, and making health simple again.</p>
       </div>
@@ -441,9 +200,10 @@
   <!-- Section 6: CTA -->
   <section class="bg-white text-center">
     <div class="container">
-      <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/products/sleep-well/" class="btn btn-primary">See what we've built</a>
-        <a href="/pages/faqs/" class="btn btn-outline">Read the science</a>
+      <div style="display: flex; gap: var(--space-5); justify-content: center; flex-wrap: wrap; align-items: center;">
+        <a href="/products/sleep-well/" class="btn btn-primary" style="min-width: 240px;">See what we've built</a>
+        <a href="https://substack.com/@georgyvarghese" target="_blank" rel="noopener noreferrer"
+          class="btn btn-outline" style="padding: 0.8rem 1.25rem; font-size: 14px;">Read blogs</a>
       </div>
     </div>
   </section>
@@ -500,7 +260,6 @@
             <li><a href="/pages/our-story/">Our Story</a></li>
             <li><a href="/products/sleep-well/">Product</a></li>
             <li><a href="/pages/faqs/">FAQs</a></li>
-            <li><a href="/blogs/journal/">Blogs</a></li>
             <li><a href="/pages/waitlist/">Waitlist</a></li>
             <li><a href="/pages/contact/">Contact</a></li>
           </ul>

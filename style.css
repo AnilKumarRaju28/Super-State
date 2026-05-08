@@ -25,16 +25,33 @@
   --border-color: #d1e8c4; /* Soft green border */
 
   /* Typography */
-  --font-heading: 'Lora', serif;
-  --font-body: 'Bricolage Grotesque', sans-serif;
-  --font-mono: 'Lora', serif; /* Used for numeric/stats per request */
+  --font-heading: 'Lora', serif; /* Semibold headings + quotes + numerics */
+  --font-body: 'Bricolage Grotesque', sans-serif; /* Medium subheads + body + captions */
+  --font-mono: 'Lora', serif; /* Legacy alias used in a few places */
 
   /* Layout */
   --max-width: 1200px;
+  --max-width-wide: 1400px;
   --border-radius: 12px;
+  --btn-radius: 20px;
   --shadow-soft: 0 4px 24px rgba(32, 126, 89, 0.08);
   --shadow-hover: 0 12px 32px rgba(32, 126, 89, 0.15);
   --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  /* Fibonacci spacing scale (1,2,3,5,8,13,21) × 0.25rem */
+  --space-1: 0.25rem;  /* 1  */
+  --space-2: 0.5rem;   /* 2  */
+  --space-3: 0.75rem;  /* 3  */
+  --space-5: 1.25rem;  /* 5  */
+  --space-8: 2rem;     /* 8  */
+  --space-13: 3.25rem; /* 13 */
+  --space-21: 5.25rem; /* 21 */
+
+  /* Grid + rhythm */
+  --gutter: var(--space-8);
+  --grid-gap: var(--space-8);
+  /* Default section rhythm (reduced to avoid excess scrolling) */
+  --section-y: var(--space-13);
 }
 
 /* Reset */
@@ -69,24 +86,24 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-body); /* Subheadings use Bricolage per request */
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-weight: 500; /* Bricolage Grotesque Medium */
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 42px;
-  font-family: var(--font-body);
-  font-weight: 900;
+  font-family: var(--font-heading);
+  font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1;
 }
 
 h2 {
   font-size: 36px;
-  font-family: var(--font-body);
-  font-weight: 900;
+  font-family: var(--font-heading);
+  font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1.1;
 }
@@ -128,35 +145,64 @@ img {
 /* Layout Utilities */
 .container {
   width: 100%;
-  max-width: 1200px; /* Increased to accommodate more nav items */
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--gutter);
 }
 
 .grid-12 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
+  gap: var(--grid-gap);
+}
+
+/* Fibonacci / Golden-ratio grid (21 columns) */
+.grid-fib {
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  gap: var(--grid-gap);
+}
+
+/* Column span utilities (mobile-first: full width unless explicitly set) */
+.col-span-21 { grid-column: span 21; }
+.col-span-13 { grid-column: span 21; }
+.col-span-8 { grid-column: span 21; }
+.col-span-5 { grid-column: span 21; }
+
+@media (min-width: 768px) {
+  .col-span-13 { grid-column: span 13; }
+  .col-span-8 { grid-column: span 8; }
+  .col-span-5 { grid-column: span 5; }
+}
+
+.stack-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.page-main {
+  padding: var(--space-13) 0 var(--space-21);
 }
 
 section {
-  padding: 5rem 0;
+  padding: var(--section-y) 0;
 }
 
 @media (min-width: 768px) {
   section {
-    padding: 8rem 0;
+    padding: var(--space-21) 0;
   }
 }
 
 /* Wide Screen Optimization (Big Monitors) */
 @media (min-width: 1440px) {
   .container {
-    max-width: 1400px;
+    max-width: var(--max-width-wide);
   }
 
   section {
-    padding: 10rem 0;
+    padding: var(--space-21) 0;
   }
 
   h1 {
@@ -169,6 +215,25 @@ section {
 
   .nav-links a {
     font-size: 22px; /* Large-screen optimized */
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --gutter: var(--space-5);
+    --grid-gap: var(--space-5);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: var(--space-13);
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --gutter: var(--space-21);
   }
 }
 
@@ -209,7 +274,7 @@ section {
 }
 
 .subheadline {
-  font-family: var(--font-mono); /* Mono-spaced subtext like Whole Truth */
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: 16px;
   max-width: 400px;
@@ -221,7 +286,7 @@ section {
 .quote, .pull-quote {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-style: italic;
+  font-style: normal;
 }
 
 .stat-number, .numeric {
@@ -254,7 +319,7 @@ section {
   align-items: center;
   justify-content: center;
   padding: 0.8rem 2rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--btn-radius);
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 16px;
@@ -269,35 +334,37 @@ section {
 }
 
 .btn-primary {
-  background-color: var(--accent-brand);
+  background-color: var(--color-root-state);
   color: var(--bg-white);
 }
 
 .btn-primary:hover {
-  background-color: #2a180e;
-}
-
-.btn-secondary {
-  background-color: var(--accent-secondary);
+  background-color: var(--color-first-light);
   color: var(--text-primary);
 }
 
+.btn-secondary {
+  background-color: var(--color-root-state);
+  color: var(--bg-white);
+}
+
 .btn-secondary:hover {
-  background-color: #b0946d;
+  background-color: var(--color-first-light);
+  color: var(--text-primary);
 }
 
 .btn-outline {
-  background-color: transparent;
-  border: 2px solid var(--accent-brand);
-  color: var(--accent-brand);
-  border-radius: 40px; /* More rounded like Whole Truth buttons */
+  background-color: var(--color-root-state);
+  border: 2px solid var(--color-root-state);
+  color: var(--bg-white);
   padding: 1rem 2.5rem;
   font-weight: 600;
 }
 
 .btn-outline:hover {
-  background-color: var(--accent-brand);
-  color: var(--bg-white);
+  background-color: var(--color-first-light);
+  border-color: var(--color-first-light);
+  color: var(--text-primary);
 }
 
 .badge {
@@ -338,6 +405,11 @@ section {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   z-index: 100;
+  transition: transform 0.35s ease;
+}
+
+.navbar--hidden {
+  transform: translateY(-100%);
 }
 
 .navbar-container {
@@ -539,7 +611,7 @@ section {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-radius: var(--btn-radius) 0 0 var(--btn-radius);
   outline: none;
   width: 100%;
   font-family: var(--font-body);
@@ -547,13 +619,19 @@ section {
 
 .newsletter-form button {
   padding: 0.8rem 1.5rem;
-  background: var(--bg-white);
-  color: var(--bg-dark);
-  border: none;
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  background: var(--color-root-state);
+  color: var(--bg-white);
+  border: 1px solid var(--color-root-state);
+  border-radius: 0 var(--btn-radius) var(--btn-radius) 0;
   cursor: pointer;
   font-weight: 500;
   font-family: var(--font-body);
+}
+
+.newsletter-form button:hover {
+  background: var(--color-first-light);
+  border-color: var(--color-first-light);
+  color: var(--text-primary);
 }
 
 /* Waitlist & Form Layouts */
