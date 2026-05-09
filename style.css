@@ -1,26 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500&family=Lora:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Lora:ital,wght@0,600;0,700;1,600;1,700&display=swap');
 
 :root {
   /* Brand Palette */
-  --color-root-state: #207e59;
-  --color-emerge: #33cc99;
+  --color-root-state: #207e59; /* Green */
+  --color-emerge: #33cc99; /* Bright Green */
   --color-first-light: #e6ff80;
   --color-signal: #ffff00;
   --color-unlock: #ccff00;
-  --color-deep-knowing: #003399;
+  --color-deep-knowing: #003399; /* Deep Blue from Logo */
   --color-truth-black: #000000;
   --color-truth-white: #ffffff;
 
   /* Functional Colors */
-  --bg-primary: #f9fff0; /* Very light tint of First Light */
+  --bg-primary: #f9fff0; /* Very light tint of Green */
   --bg-white: var(--color-truth-white);
   --bg-dark: var(--color-deep-knowing);
-  --bg-darker: #002673; /* Darker version of Deep Knowing */
+  --bg-darker: #002673;
   --text-primary: var(--color-truth-black);
   --text-light: var(--color-truth-white);
-  --accent-brand: var(--color-root-state);
-  --accent-secondary: var(--color-emerge);
-  --cta-bg: var(--color-root-state);
+  
+  /* Mixing Blue and Green */
+  --accent-brand: var(--color-deep-knowing); /* Primary accents in Blue */
+  --accent-secondary: var(--color-root-state); /* Secondary accents/underlines in Green */
+  --cta-bg: var(--color-deep-knowing); /* Buttons in Blue */
   --success: var(--color-root-state);
   --border-color: #d1e8c4; /* Soft green border */
 
@@ -34,7 +36,7 @@
   --max-width-wide: 1400px;
   --border-radius: 12px;
   --btn-radius: 20px;
-  --shadow-soft: 0 4px 24px rgba(32, 126, 89, 0.08);
+  --shadow-soft: 0 4px 24px rgba(32, 126, 89, 0.08); /* Green tinted shadows */
   --shadow-hover: 0 12px 32px rgba(32, 126, 89, 0.15);
   --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 
@@ -391,7 +393,7 @@ section {
 /* Navbar */
 .announcement-bar {
   background-color: var(--accent-brand);
-  color: var(--accent-secondary);
+  color: var(--text-light);
   font-family: var(--font-mono);
   font-size: 12px;
   text-align: center;
@@ -431,7 +433,7 @@ section {
   }
   
   .logo-img {
-    height: 148px; /* Slightly larger, still within 150px navbar */
+    height: 55px;
   }
 }
 
@@ -441,7 +443,7 @@ section {
 }
 
 .logo-img {
-  height: 118px; /* Slightly larger, still within 120px navbar */
+  height: 45px;
   width: auto;
   mix-blend-mode: multiply;
   transition: transform 0.3s ease;
@@ -449,14 +451,14 @@ section {
 
 /* Footer logo adjustment for dark background */
 .footer .logo-img {
-  mix-blend-mode: normal; 
-  filter: brightness(0) invert(1) brightness(1.2); /* Makes it white/light for dark footer */
-  height: 108px; /* Slightly larger in footer */
+  mix-blend-mode: screen; 
+  filter: grayscale(1) invert(1) brightness(2); /* Removes white background and makes text light */
+  height: 60px;
 }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 52px;
+    height: 35px;
   }
 }
 

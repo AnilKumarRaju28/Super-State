@@ -8,7 +8,7 @@
   <meta name="description"
     content="Science-backed daily restoration. We turn complex nutrition into a simple, dark-chocolate ritual." />
   <link rel="stylesheet" href="./style.css" />
-  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
 </head>
 
 <body>
@@ -59,72 +59,282 @@
 
   <!-- SECTION 1 — HERO (Whole Truth Style) -->
   <header class="hero manifesto-hero section bg-primary fade-up"
-    style="padding-bottom: 0;">
-    <div class="container" style="position: relative;">
+    style="padding-bottom: 0; padding-top: 0; overflow: hidden;">
+    <div class="container" style="position: relative; padding-top: 0;">
 
-      <!-- (Removed decorative emoji for cleaner tone) -->
+      <div class="hero-two-col">
 
-      <div style="max-width: 900px;">
-        <span class="eyebrow"
-          style="color: var(--accent-brand); letter-spacing: 0.1em; font-weight: 700; margin-bottom: 1.5rem; display: block;">SCIENCE-BACKED
-          DAILY RESTORATION</span>
+        <!-- Left: Text -->
+        <div class="hero-text-col">
+          <h1
+            style="margin-bottom: 2.5rem; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(72px, 9vw, 150px); line-height: 0.95; letter-spacing: 0.03em;">
+            Health, <br> <span class="text-underline">simplified.</span></h1>
 
-        <h1 style="margin-bottom: 2.5rem;">Health, <br> <span class="text-underline">simplified.</span></h1>
+          <div style="display:flex; flex-direction:column; gap:1.5rem; align-items:flex-start; width:100%;">
+            <div class="hero-subheadline"
+              style="display:flex; justify-content:space-between; max-width:500px; width:100%; font-size:clamp(14px,1.4vw,20px); white-space:nowrap;">
+              <span class="subheadline-left">We make health simple in a world that makes it complicated. </span>
 
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;">
-          <p class="subheadline" style="max-width: 450px; margin: 0;">
-            We make health simple in a world that makes it complicated.
-          </p>
-          <a href="/pages/our-story/" class="btn btn-outline"
-            style="padding: 0.8rem 1.5rem; font-size: 14px; display: inline-block;">Our Story →</a>
+            </div>
+            <a href="/pages/our-story/" class="btn btn-outline"
+              style="padding:0.8rem 1.5rem; font-size:14px; display:inline-block;">Our Story →</a>
+          </div>
         </div>
+
+        <!-- Right: Product Image -->
+        <div class="hero-image-col">
+          <div class="hero-product-wrap">
+            <img src="/assets/dark-mode-hero-3.png" alt="SuperState Dark Mode — Science-backed sleep ritual"
+              class="hero-product-img">
+          </div>
+        </div>
+
       </div>
     </div>
   </header>
 
+  <style>
+    .hero-two-col {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      min-height: 80vh;
+      padding: var(--space-13) 0;
+    }
+
+    .hero-text-col {
+      flex: 1 1 50%;
+      z-index: 1;
+      order: 1;
+    }
+
+    .hero-image-col {
+      flex: 0 0 520px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      order: 2;
+    }
+
+    .hero-product-wrap {
+      position: relative;
+      animation: floatProduct 4s ease-in-out infinite;
+    }
+
+    .hero-product-img {
+      width: 100%;
+      max-width: 520px;
+      display: block;
+      mix-blend-mode: multiply;
+      filter: contrast(1.05) saturate(1.1);
+    }
+
+    @keyframes floatProduct {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-16px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-two-col {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding: var(--space-13) 0 0;
+        align-items: center;
+      }
+
+      .hero-text-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-text-col .subheadline {
+        text-align: center;
+      }
+
+      .hero-image-col {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+      }
+
+      .hero-product-img {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
   <!-- SECTION 2 — THE PROBLEM (Bold Diagnosis) -->
-  <section id="why-we-exist" class="problem-manifesto bg-white fade-up" style="padding-top: var(--space-21);">
+  <!-- SECTION 2 — THE PROBLEM (Bold Diagnosis) -->
+  <section id="why-we-exist" class="problem-manifesto bg-dark fade-up"
+    style="padding: var(--space-21) 0; color: var(--text-light); margin-top: var(--space-21);">
     <div class="container">
-      <div class="grid-fib" style="align-items: flex-start;">
-        <div class="col-span-21" style="margin-bottom: var(--space-21);">
-          <h2 style="max-width: 850px;">The industry is <br> <span style="color: #D9534F;">broken.</span></h2>
+      <div class="problem-layout">
+        <div class="problem-title-side fade-up">
+          <h2
+            style="font-size: clamp(48px, 6vw, 84px); line-height: 1.1; margin: 0; color: var(--text-light); font-family: var(--font-heading);">
+            The industry <br>
+            is <span class="marker-highlight">BROKEN.</span>
+          </h2>
         </div>
 
-        <!-- Problem Points Grid -->
-        <div class="problem-points-col col-span-21" style="display: grid; gap: var(--space-13);">
-          <div class="problem-item">
-            <h2 style="color: var(--accent-brand); margin-bottom: 1.5rem; font-size: clamp(32px, 4vw, 40px);">01. Complexity <br> is a trap.</h2>
-            <p style="font-size: clamp(18px, 1.5vw, 20px); font-weight: 500; line-height: 1.4; opacity: 0.8;">
-              Brands use jargon to look smart. They profit from your confusion.
-            </p>
+        <div class="problem-items-side">
+          <div class="problem-item-new fade-up" style="transition-delay: 0.1s;">
+            <div class="problem-num">01</div>
+            <h2 class="problem-heading">Complexity is a <span class="marker-highlight">trap.</span></h2>
           </div>
 
-          <div class="problem-item">
-            <h2 style="color: var(--accent-brand); margin-bottom: 1.5rem; font-size: clamp(32px, 4vw, 40px);">02. Transparency <br> is a lie.</h2>
-            <p style="font-size: clamp(18px, 1.5vw, 20px); font-weight: 500; line-height: 1.4; opacity: 0.8;">
-              Proprietary blends hide cheap fillers. You deserve the truth.
-            </p>
+          <div class="problem-item-new fade-up" style="transition-delay: 0.2s;">
+            <div class="problem-num">02</div>
+            <h2 class="problem-heading">Transparency is a <span class="highlight-italic marker-highlight">lie.</span>
+            </h2>
           </div>
 
-          <div class="problem-item">
-            <h2 style="color: var(--accent-brand); margin-bottom: 1.5rem; font-size: clamp(32px, 4vw, 40px);">03. Profit over <br> people.</h2>
-            <p style="font-size: clamp(18px, 1.5vw, 20px); font-weight: 500; line-height: 1.4; opacity: 0.8;">
-              The system sells more, not better. Results are an afterthought.
-            </p>
+          <div class="problem-item-new fade-up" style="transition-delay: 0.3s;">
+            <div class="problem-num">03</div>
+            <h2 class="problem-heading">Profit over <span class="highlight-italic marker-highlight">people.</span></h2>
           </div>
         </div>
-
       </div>
     </div>
 
     <style>
-      .problem-points-col {
-        grid-template-columns: 1fr;
+      .problem-layout {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 4rem;
       }
-      @media (min-width: 992px) {
-        .problem-points-col { 
-          grid-template-columns: repeat(3, 1fr) !important;
-            grid-column: span 21 !important; 
+
+      .problem-title-side {
+        flex: 1;
+        max-width: 500px;
+      }
+
+      .problem-items-side {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        /* Push items to the right */
+      }
+
+      .problem-item-new {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        max-width: 480px;
+        /* Constrain width of items */
+      }
+
+      .problem-item-new:first-child {
+        padding-top: 0;
+      }
+
+      .problem-item-new:last-child {
+        border-bottom: none;
+      }
+
+      .problem-num {
+        width: 52px;
+        height: 52px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 18px;
+        font-weight: 800;
+        flex-shrink: 0;
+        color: var(--color-emerge);
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      .problem-item-new:hover .problem-num {
+        background-color: var(--color-first-light);
+        border-color: var(--color-first-light);
+        color: var(--color-deep-knowing);
+        transform: scale(1.15);
+        box-shadow: 0 0 20px rgba(230, 255, 128, 0.3);
+      }
+
+      .problem-heading {
+        margin: 0;
+        font-size: clamp(22px, 2.5vw, 32px);
+        color: var(--text-light);
+        font-weight: 500;
+        line-height: 1.2;
+        font-family: var(--font-heading);
+      }
+
+      .marker-highlight {
+        position: relative;
+        z-index: 1;
+        padding: 0 0.4rem;
+        font-style: italic;
+        font-family: var(--font-heading);
+        color: var(--color-deep-knowing) !important;
+        display: inline-block;
+        margin-left: 0.2rem;
+      }
+
+      .marker-highlight::before {
+        content: "";
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: var(--color-first-light);
+        z-index: -1;
+        transform: rotate(-1.5deg);
+        border-radius: 2px;
+        transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+        transition-delay: inherit;
+      }
+
+      .visible .marker-highlight::before {
+        width: 100%;
+      }
+
+      @media (max-width: 992px) {
+        .problem-layout {
+          flex-direction: column;
+          gap: 4rem;
+        }
+
+        .problem-title-side {
+          text-align: left;
+        }
+
+        .problem-items-side {
+          width: 100%;
+        }
+
+        .problem-item-new {
+          gap: 1.5rem;
+          padding: 2rem 0;
+        }
+
+        .problem-num {
+          width: 56px;
+          height: 56px;
+          font-size: 16px;
         }
       }
     </style>
@@ -139,28 +349,35 @@
       </div>
 
       <div class="beliefs-stack" style="text-align: center; max-width: 1200px; margin: 0 auto;">
-        <div class="belief-card" style="margin-bottom: var(--space-21); max-width: 900px; margin-left: auto; margin-right: auto;">
-          <h3 style="color: var(--accent-secondary); margin-bottom: 1rem; font-family: var(--font-heading); font-weight: 600;">
+        <div class="belief-card"
+          style="margin-bottom: var(--space-21); max-width: 900px; margin-left: auto; margin-right: auto;">
+          <h3
+            style="color: var(--accent-secondary); margin-bottom: 1rem; font-family: var(--font-heading); font-weight: 600;">
             Simplicity is the highest form of science.
           </h3>
-          <p style="font-size: 22px; color: #D1D0CE; font-weight: 500; line-height: 1.55; max-width: 800px; margin: 0 auto;">
-            We include only what is essential — no fillers, no fluff, no jargon. Just evidence-led ingredients at honest doses.
+          <p
+            style="font-size: 22px; color: #D1D0CE; font-weight: 500; line-height: 1.55; max-width: 800px; margin: 0 auto;">
+            We include only what is essential — no fillers, no fluff, no jargon. Just evidence-led ingredients at honest
+            doses.
           </p>
         </div>
 
         <div class="belief-row" style="max-width: 900px; margin: 0 auto;">
           <div class="belief-card">
-            <h3 style="color: var(--accent-secondary); margin-bottom: 1rem; font-family: var(--font-heading); font-weight: 600;">
+            <h3
+              style="color: var(--accent-secondary); margin-bottom: 1rem; font-family: var(--font-heading); font-weight: 600;">
               We are fixing how health is communicated.
             </h3>
-            <p style="font-size: 22px; color: #D1D0CE; font-weight: 500; line-height: 1.55; max-width: 700px; margin: 0 auto;">
+            <p
+              style="font-size: 22px; color: #D1D0CE; font-weight: 500; line-height: 1.55; max-width: 700px; margin: 0 auto;">
               We show you the “why” behind the “what” — clear explanations, zero mystery, and no marketing noise.
             </p>
             <div style="max-width: 560px; width: 100%; margin: var(--space-13) auto 0;">
               <img src="/assets/venn-diagram-v2.png" alt="Knowledge and Awareness Venn Diagram"
                 style="width: 100%; border-radius: var(--border-radius); transition: transform 0.5s ease; background-color: #fff;"
                 onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-              <p style="margin-top: 1.25rem; font-family: var(--font-heading); color: #D1D0CE; text-align: center; font-size: 16px;">
+              <p
+                style="margin-top: 1.25rem; font-family: var(--font-heading); color: #D1D0CE; text-align: center; font-size: 16px;">
                 Where real change happens.
               </p>
             </div>
