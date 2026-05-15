@@ -67,7 +67,7 @@
         <!-- Left: Text -->
         <div class="hero-text-col">
           <h1
-            style="margin-bottom: 2.5rem; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(72px, 9vw, 150px); line-height: 0.95; letter-spacing: 0.03em;">
+            style="margin-bottom: 2.5rem; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(60px, 9vw, 120px); line-height: 0.95; letter-spacing: -0.01em; max-width: 500px;">
             Health, <br> <span class="text-underline">simplified.</span></h1>
 
           <div style="display:flex; flex-direction:column; gap:1.5rem; align-items:flex-start; width:100%;">
@@ -110,7 +110,7 @@
     }
 
     .hero-image-col {
-      flex: 0 0 520px;
+      flex: 0 0 440px;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -124,7 +124,7 @@
 
     .hero-product-img {
       width: 100%;
-      max-width: 520px;
+      max-width: 440px;
       display: block;
       mix-blend-mode: multiply;
       filter: contrast(1.05) saturate(1.1);
@@ -337,54 +337,135 @@
           font-size: 16px;
         }
       }
+      .hand-drawn-underline {
+        position: relative;
+        display: inline-block;
+      }
+
+      .hand-drawn-underline::after {
+        content: "";
+        position: absolute;
+        left: -1%;
+        bottom: -22px;
+        width: 102%;
+        height: 35px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 40' preserveAspectRatio='none'%3E%3Cpath d='M5,15 C100,8 200,20 300,12 C400,5 495,18 495,12' stroke='%23207e59' stroke-width='6' fill='none' stroke-linecap='round' opacity='0.7' /%3E%3Cpath d='M8,30 C110,25 210,35 310,28 C410,20 490,32 490,25' stroke='%23207e59' stroke-width='5' fill='none' stroke-linecap='round' opacity='0.6' /%3E%3C/svg%3E");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        z-index: -1;
+        filter: blur(0.4px);
+        transform: rotate(-0.4deg);
+      }
     </style>
   </section>
 
-  <!-- SECTION 3 — WHAT WE BELIEVE (Bold Beliefs) -->
-  <section class="beliefs-manifesto bg-dark" style="padding: var(--space-21) 0;">
+  <!-- SECTION 3A — SIMPLICITY (White) -->
+  <section class="beliefs-manifesto bg-white fade-up" style="padding: var(--space-21) 0;">
     <div class="container" style="text-align: center;">
       <div style="margin-bottom: 6rem;">
-        <h2 style="color: var(--bg-white); line-height: 1;">This is what we <span
-            style="color: var(--accent-secondary);">stand for.</span></h2>
+        <h2 style="color: var(--text-primary); line-height: 1;"><span class="hand-drawn-underline">We believe health should be <span class="marker-highlight">simple.</span></span></h2>
       </div>
 
       <div class="beliefs-stack" style="text-align: center; max-width: 1200px; margin: 0 auto;">
         <div class="belief-card"
-          style="margin-bottom: var(--space-21); max-width: 900px; margin-left: auto; margin-right: auto;">
+          style="max-width: 900px; margin-left: auto; margin-right: auto;">
           <h3
             style="color: var(--accent-secondary); margin-bottom: 1rem; font-family: var(--font-heading); font-weight: 600;">
-            Simplicity is the highest form of science.
+            Simplicity is the highest form of science, and it is the only thing we <span class="marker-highlight">trust.</span>
+          </h3>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3B — COMMUNICATION (Blue) -->
+  <section class="communication-manifesto bg-dark fade-up" style="padding: var(--space-21) 0; color: var(--text-light);">
+    <div class="container">
+      <div class="communication-layout">
+        <div class="communication-text-side">
+          <h3
+            style="color: var(--color-first-light); margin-bottom: 2rem; font-family: var(--font-heading); font-weight: 600; font-size: clamp(32px, 4vw, 48px); line-height: 1.1;">
+            We are fixing how health is communicated.
           </h3>
           <p
-            style="font-size: 22px; color: #D1D0CE; font-weight: 500; line-height: 1.55; max-width: 800px; margin: 0 auto;">
-            We include only what is essential — no fillers, no fluff, no jargon. Just evidence-led ingredients at honest
-            doses.
+            style="font-size: clamp(18px, 1.5vw, 24px); color: #D1D0CE; font-weight: 500; line-height: 1.6; max-width: 540px;">
+            We can't fix health without fixing how it's communicated. <br><br>
+            Because what you read and believe shapes what you take and trust. <br><br>
+            We're changing that.
           </p>
         </div>
 
-        <div class="belief-row" style="max-width: 900px; margin: 0 auto;">
-          <div class="belief-card">
-            <h3
-              style="color: var(--accent-secondary); margin-bottom: 1rem; font-family: var(--font-heading); font-weight: 600;">
-              We are fixing how health is communicated.
-            </h3>
+        <div class="communication-image-side">
+          <div class="venn-wrapper">
+            <img src="/assets/venn-diagram-v3.png" alt="Knowledge and Awareness Venn Diagram"
+              class="venn-img">
             <p
-              style="font-size: 22px; color: #D1D0CE; font-weight: 500; line-height: 1.55; max-width: 700px; margin: 0 auto;">
-              We show you the “why” behind the “what” — clear explanations, zero mystery, and no marketing noise.
+              style="margin-top: 1.5rem; font-family: var(--font-heading); color: #D1D0CE; text-align: center; font-size: 16px; font-style: italic; opacity: 0.8;">
+              Where real change happens.
             </p>
-            <div style="max-width: 560px; width: 100%; margin: var(--space-13) auto 0;">
-              <img src="/assets/venn-diagram-v2.png" alt="Knowledge and Awareness Venn Diagram"
-                style="width: 100%; border-radius: var(--border-radius); transition: transform 0.5s ease; background-color: #fff;"
-                onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-              <p
-                style="margin-top: 1.25rem; font-family: var(--font-heading); color: #D1D0CE; text-align: center; font-size: 16px;">
-                Where real change happens.
-              </p>
-            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <style>
+      .communication-layout {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6rem;
+      }
+
+      .communication-text-side {
+        flex: 1;
+        max-width: 600px;
+      }
+
+      .communication-image-side {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .venn-wrapper {
+        width: 100%;
+        max-width: 560px;
+        transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      .venn-wrapper:hover {
+        transform: scale(1.02);
+      }
+
+      .venn-img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius);
+        background-color: #fff;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 992px) {
+        .communication-layout {
+          flex-direction: column;
+          text-align: center;
+          gap: 4rem;
+        }
+
+        .communication-text-side {
+          max-width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .communication-text-side p {
+          max-width: 100%;
+        }
+      }
+    </style>
   </section>
 
 
